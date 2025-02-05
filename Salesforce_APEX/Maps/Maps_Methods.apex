@@ -8,29 +8,29 @@ public class Maps_Methods {
         scoreMap.put('Bob', 85);
         scoreMap.put('Charlie', 95);
 
-        // 3. Retrieving a value using a key
+        // 3 . Retrieving a  value using a key
         Integer aliceScore = scoreMap.get('Alice'); // Returns 90
-        System.debug('Alice Score: ' + aliceScore);
+        System.debug('Alice Score: ' + aliceScore );
 
-        // 4. Checking if a key exists
+        //  4. Checking if a key exists
         Boolean hasBob = scoreMap.containsKey('Bob'); // Returns true
         System.debug('Has Bob: ' + hasBob);
 
-        // 5. Checking if a value exists
-        Boolean hasValue = scoreMap.containsValue(85); // Returns true
+        // 5. Checking if a value exists : 
+        Boolean hasValue = scoreMap.containsValue(85 ); // Returns true
         System.debug('Has value 85: ' + hasValue);
 
-        // 6. Removing a key-value pair
+        // 6 . Removing a key-value pair
         scoreMap.remove('Charlie'); // Removes Charlie from the Map
         System.debug('After removing Charlie: ' + scoreMap);
 
-        // 7. Getting all keys
+        // 7.  Getting all keys: 
         Set<String> keys = scoreMap.keySet();
         System.debug('Keys: ' + keys);
-
+  
         // 8. Getting all values
-        List<Integer> values = scoreMap.values();
-        System.debug('Values: ' + values);
+        List<Integer> values = scoreMap.values( );
+        System.debug('Values: ' + values );
 
         // 9. Getting the size of the Map
         Integer size = scoreMap.size();
