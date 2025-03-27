@@ -89,6 +89,19 @@ public class SOQLQuery {
         for (AggregateResult ar : industryCount) {
             System.debug('Industry: ' + ar.get('Industry') + ', Count: ' + ar.get('recordCount'));
         }
+        //Retrieves all accounts where the Name contains "Global".
+        List<Account> accs = [SELECT Id, Name FROM Account WHERE Name LIKE '%Global%'];
+            for (Account acc : accs) {
+            System.debug('Matching Account: ' + acc.Name);
+
+
+
+
+
+
+
+
+
     }
 
 
