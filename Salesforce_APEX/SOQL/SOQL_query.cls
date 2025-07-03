@@ -95,18 +95,51 @@ public class SOQLQuery {
             System.debug('Matching Account: ' + acc.Name);
 
 
+        //1. Child-to-Parent (Many-to-One)
+        //You go from child to parent using dot notation.
+        //Example: From a Contact to its Account.
+        List<Contact> Contacts = [SELECT Id,FistName,LastName,Account.Name FROM Contact];
+        for (Contact c: contacts ){
+            System.debug('Contact:'+ c.FistName +''+ c.LastName + 'Account :'+ c.Account.Name);
+        }
+                        //Each Contact has a lookup to an Account.
+                        //Account.Name accesses the parent Account's name via the relationship.
+
+        //***************************************************** */
+
+        //2. Parent-to-Child (One-to-Many)
+        //You go from parent to children using a subquery inside parentheses (...).
+        //Use the child relationship name, not the object name.
+        //Example: From Account to its related Contacts:
+        List<Account> accounts = [SELECT Id, Name, (SELECT Id, FirstName, LastName FROM Contacts) FROM Account];
+        for(Account acc : accounts){
+            System.debug('Account: ' + acc.Name);
+            for(Contact c : acc.Contacts){
+            System.debug('  Contact: ' + c.FirstName + ' ' + c.LastName);
+            }
+                    //Contacts is the child relationship name (not Contact).
+                    //It fetches all Contacts related to each Account.
+        }
 
 
+        /*Nested Relationship Example  */
+        //Get all Opportunities and their Account Names and Contacts:
+        List<Opportunity> opps = [
+            SELECT Id, Name, Account.Name,
+           Account.Owner.Name,
+           (SELECT Id, FirstName, LastName FROM Account.Contacts)
+    FROM Opportunity
+];
 
-
-
-
-
-    }
-
-
-
-    }
-
-
+            for(Opportunity o : opps){
+                System.debug('Opportunity: ' + o.Name);
+                System.debug('  Account: ' + o.Account.Name);
+                System.debug('  Account Owner: ' + o.Account.Owner.Name);
+                for(Contact c : o.Account.Contacts){
+                    System.debug('    Contact: ' + c.FirstName + ' ' + c.LastName);
+                }
 }
+
+            }}}
+
+
