@@ -29,3 +29,41 @@ Trigger AccountTrigger on Account (before insert ){
         AccountTriggerHandler.updateDesc(Trigger.New);
     }
 }
+//*********************************************************** */
+
+public class AccountTriggerHandler {
+    public static void updateDesc(List<Account> accList){
+        for (Account acc : accList){
+            acc.Description = 'new Record Added';
+        }
+    }
+}
+    public static void createOpp (List<Account> accList){
+        List<Opportunity> oppList = new List<Opportunity>();
+        for (Account acc : accList){
+            Opportunity opp = new Opportunity();
+            opp.Name = acc.Name;
+            opp.CloseDate = System.today();
+            opp.StageName ='Prospecting';
+            opp.AccountId = acc.Id;
+            // acc.AnnualRevenu = 1000; Erorr : Read only
+            oppList.add(opp);
+            
+        }
+        if (!oppList.isEmpty()){
+            insert oppList;
+        }
+    }
+
+trigger AccountTrigger1 on Account (before insert ,after insert) {
+    if (Trigger.isInsert){
+        if (Trigger.isefore){
+            AccountTriggerHandler.updateDesc(Trigger.new);
+           
+        }else if (Trigger.isAfter){
+            AccountTriggerHandler.createOpp(Trigger.New);
+        }
+    }
+}
+
+//***************************************************************** */

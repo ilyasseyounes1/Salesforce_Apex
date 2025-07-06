@@ -95,6 +95,8 @@ public class SOQLQuery {
             System.debug('Matching Account: ' + acc.Name);
 
 
+ //********************************************************************************** */
+
         //1. Child-to-Parent (Many-to-One)
         //You go from child to parent using dot notation.
         //Example: From a Contact to its Account.
@@ -105,7 +107,7 @@ public class SOQLQuery {
                         //Each Contact has a lookup to an Account.
                         //Account.Name accesses the parent Account's name via the relationship.
 
-        //***************************************************** */
+       
 
         //2. Parent-to-Child (One-to-Many)
         //You go from parent to children using a subquery inside parentheses (...).
@@ -117,7 +119,7 @@ public class SOQLQuery {
             for(Contact c : acc.Contacts){
             System.debug('  Contact: ' + c.FirstName + ' ' + c.LastName);
             }
-                    //Contacts is the child relationship name (not Contact).
+                    //Contacts is the child relationship name (not Contact). !!!!!! 
                     //It fetches all Contacts related to each Account.
         }
 
@@ -128,7 +130,7 @@ public class SOQLQuery {
             SELECT Id, Name, Account.Name,
            Account.Owner.Name,
            (SELECT Id, FirstName, LastName FROM Account.Contacts)
-    FROM Opportunity
+            FROM Opportunity
 ];
 
             for(Opportunity o : opps){
@@ -139,6 +141,27 @@ public class SOQLQuery {
                     System.debug('    Contact: ' + c.FirstName + ' ' + c.LastName);
                 }
 }
+
+/***************************************************************************************************** */
+
+       /* 🔴 Caution with Inline SOQL
+            Inline SOQL can be dangerous if misused, especially in loops!
+
+            ❌ Bad Practice – SOQL in a Loop:  */
+            for (Contact c : contactsList) {
+                Account a = [SELECT Name FROM Account WHERE Id = :c.AccountId]; // BAD!
+                System.debug(a.Name);
+            }
+            //Why is this bad?
+
+           // It runs a SOQL query once for every contact → violates governor limits (max 100 queries per transaction).
+                    set<Id> accIds = new Set<Id>();
+                    for (Account acc : [SELECT Id, FROM Account WHERE AnnualRevenue >=: AR AND AnnualRevenue <= 10000]){
+                        accIds.add(acc.Id);
+                    }
+
+
+
 
             }}}
 

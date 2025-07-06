@@ -95,6 +95,40 @@ public class DML_UseCasesDemo {
                 }
             }
         }
+
+        //Another Ex : 
+        List<Contact> conList = new List<Contact > {
+            new Contact(FistName = 'ilyasse',LastName = 'younes',Department='Finance'),
+            new Contact(FistName = 'ilyasse',LastName = 'younes',Department='Finance'),
+            new Contact() // Erorr
+            };
+            Database.SaveResult[] srList = Database.insert (conList ,false);
+            // Iterate through erach returned result :
+            for (Database.SaveResult sr : srList) {
+                if (sr.isSuccess()){
+                    // Operation was successful , so get the ID of the record that was processed
+                    System.debug('Successfully inserted contact. Contact ID : ' +Sr.getId());
+                }else{
+                    // Operation failed , so get all erors :
+                    for (Database.Erorr err : sr.getErrors()){
+                        System.debug('the following error has occurred .');
+                        System.debug(err.getStatusCode() + ':'+ err.getMessage());
+                        System.debug('Contact fields that affected thid erorr :' + err.getFields());
+                    }
+                }
+            }
+        }
+
+
+
+    }
+    public static void main () {
+        DML_UseCasesDemo.insertExample();
+        DML_UseCasesDemo.bulkInsertExample();
+        DML_UseCasesDemo.updateExample();
+        DML_UseCasesDemo.databaseInsertExample(); // For partial success handling
+
+        return 0;
     }
 }
 
