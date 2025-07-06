@@ -37,6 +37,7 @@ public class AccountTriggerHandler {
             acc.Description = 'new Record Added';
         }
     }
+}
     public static void createOpp (List<Account> accList){
         List<Opportunity> oppList = new List<Opportunity>();
         for (Account acc : accList){
@@ -66,19 +67,3 @@ trigger AccountTrigger1 on Account (before insert ,after insert) {
 }
 
 //***************************************************************** */
-trigger LeadAfterInsert on Lead (after insert) {
-    for (Lead l : Trigger.new) {
-        if (l.Email != null) {
-            ExternalSync.sendLeadEmailAsync(l.Email);
-        }
-    }
-}
-
-// Separate class with future method
-public class ExternalSync {
-    @future
-    public static void sendLeadEmailAsync(String email) {
-        // Make HTTP callout or external sync
-        System.debug('Sending email: ' + email);
-    }
-}
