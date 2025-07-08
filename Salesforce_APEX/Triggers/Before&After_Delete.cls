@@ -33,7 +33,7 @@ public class ContactTriggerHandler {
         Set<Id> accIds = new Set<Id>();
 
         for (Contact con : conList){
-            if (AccountId != null){
+            if (con.AccountId != null){
                 accIds.add(con.AccountId);
             }
         }
@@ -42,27 +42,38 @@ public class ContactTriggerHandler {
                                 acc.Total_Contact_Count__c = acc.Contacts.size();
                                 accList.add(acc);
                             }
+        if (!accList.isEmpty()){
+            update accList;
+    }
+
     }
 
 }
 
 Trigger ContactTrigger on Contact (After insert , after delete, after undelete ){
     if (Trigger.isInsert){
+        if(Trigger.isAfter){    
+            ContactTriggerHandler.totalContactCount(Trigger.new);
+
+        }
+
+    }else if (Trigger.isDelete){
         if(Trigger.isAfter){
-
+            ContactTriggerHandler.totalContactCount(Trigger.old);
         }
 
-    }
-    if (Trigger.isDelete){
-        if (Trigger.isAfter){
-
+    }else if (Trigger.isUndelete){
+        if(Trigger.isAfter){
+            ContactTriggerHandler.totalContactCount(Trigger.new);
         }
-
-    }
-    if (Trigger.isUndelete){
-        if (Trigger.isAfter){
-
-        }
-
     }
 }
+
+
+
+
+
+
+
+
+
