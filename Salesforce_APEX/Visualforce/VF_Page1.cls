@@ -60,5 +60,26 @@
                 </apex:pageBlockButtons>
                          
         </apex:pageBlock>
+        
+        <apex:pageBlock title="Contacts">
+            <apex:pageBlockTable value="{!Account.contacts}" var="con">
+                
+            	<apex:column>
+                	<apex:outputLink value="{! URLFOR($Action.Contact.Edit,con.id)}">
+                    	Edit
+                    </apex:outputLink>
+                    <apex:outputLink value="{! URLFOR ($Action.contact.Delete,con.id)}">
+                    	Del
+                    </apex:outputLink>
+                </apex:column>
+                
+                <apex:column value="{!con.Name}"/>
+                <apex:column value="{!con.Email}"/>
+                
+            </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+        
     </apex:form>
 </apex:page>
+
