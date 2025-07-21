@@ -1,4 +1,4 @@
-// Exercise 6: Bulk Processing with Queueable
+// Bulk Processing with Queueable
 public class Lv6_BulkOperations_AsyncProccessing implements Queueable, Database.AllowsCallouts {
     
     private Integer currentPage;
