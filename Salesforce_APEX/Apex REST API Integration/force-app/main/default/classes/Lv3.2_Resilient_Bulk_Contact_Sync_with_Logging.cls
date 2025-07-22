@@ -148,3 +148,19 @@ global with sharing class ContactIntegrationService {
         }
     }
 }
+/* 
+[
+  {Sample JSON Input
+    "first_name": "John",
+    "last_name": "Smith",
+    "email_address": "john.smith@example.com",
+    "phone_number": "555-0123"
+  },
+  {
+    "first_name": "Mary",
+    "last_name": "",
+    "email_address": "mary.johnson@example.com",
+    "phone_number": "555-0124"
+  }
+]
+*/
