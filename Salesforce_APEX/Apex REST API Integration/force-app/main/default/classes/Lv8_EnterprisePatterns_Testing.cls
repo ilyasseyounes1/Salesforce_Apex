@@ -1,6 +1,7 @@
 @isTest
 public class Lv8_EnterprisePatterns_Testing {
     // Production-Ready Testing
+
     @isTest
     static void testAPIIntegration() {
         // Create mock response
@@ -12,24 +13,23 @@ public class Lv8_EnterprisePatterns_Testing {
         Test.stopTest();
         
         System.assertNotEquals(null, result);
+    }
+
+    // ⬇️ Move mock class inside and mark it private
+    private class MockHttpResponseGenerator implements HttpCalloutMock {
+        private Integer statusCode;
+        private String responseBody;
         
+        public MockHttpResponseGenerator(Integer code, String body) {
+            this.statusCode = code;
+            this.responseBody = body;
+        }
+        
+        public HttpResponse respond(HttpRequest req) {
+            HttpResponse res = new HttpResponse();
+            res.setStatusCode(statusCode);
+            res.setBody(responseBody);
+            return res;
+        }
     }
 }
-
-public class MockHttpResponseGenerator implements HttpCalloutMock {
-    private Integer statusCode;
-    private String responseBody;
-    
-    public MockHttpResponseGenerator(Integer code, String body) {
-        this.statusCode = code;
-        this.responseBody = body;
-    }
-    
-    public HttpResponse respond(HttpRequest req) {
-        HttpResponse res = new HttpResponse();
-        res.setStatusCode(statusCode);
-        res.setBody(responseBody);
-        return res;
-    }
-}
-
