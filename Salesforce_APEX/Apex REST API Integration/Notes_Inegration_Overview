@@ -1,0 +1,101 @@
+         🔄 Salesforce Integration Overview
+
+Salesforce Integration
+├── 1. Inbound Integration (External → Salesforce)
+│   ├── A. Examples
+│   │   ├── External app sends data to Salesforce via REST/SOAP API
+│   │   ├── Webhook calls Salesforce (e.g., external payment confirmation)
+│   │   └── 3rd-party system performs query/update via Salesforce API
+│   ├── B. Common APIs Used
+│   │   ├── REST API
+│   │   ├── SOAP API
+│   │   └── Bulk API (for large data)
+│   ├── C. Authentication Mechanisms
+│   │   ├── OAuth 2.0
+│   │   │   ├── Web Server Flow (for apps with UI)
+│   │   │   ├── JWT Bearer Flow (server-to-server)
+│   │   │   └── Username-Password Flow (legacy, less secure)
+│   │   └── Named Credentials (simplifies auth config)
+│   └── D. Security Considerations
+│       ├── Use IP Whitelisting
+│       ├── Enforce OAuth scopes
+│       ├── Enable Session Policies
+│       └── Avoid hardcoding credentials
+
+├── 2. Outbound Integration (Salesforce → External System)
+│   ├── A. Examples
+│   │   ├── Call external REST API from Apex (e.g., send order to ERP)
+│   │   ├── Outbound Message (Workflow-based, SOAP)
+│   │   └── Callouts via Flows/Process Builder
+│   ├── B. Callout Methods
+│   │   ├── HTTP Callouts via Apex
+│   │   ├── Named Credentials + External Services
+│   │   ├── Outbound Messages (SOAP only)
+│   │   └── Platform Events / Change Data Capture + Middleware
+│   ├── C. Authentication Mechanisms
+│   │   ├── Named Credentials (best practice)
+│   │   ├── Basic Auth (simple, not ideal)
+│   │   ├── OAuth 2.0
+│   │   └── Custom Header Token (if external system uses API keys)
+│   └── D. Security Considerations
+│       ├── Set callout domains in Remote Site Settings / Named Credentials
+│       ├── Limit external endpoints to known domains
+│       ├── Retry handling (Queueable, Future)
+│       └── Use middleware (e.g., Mulesoft, Heroku) when needed
+
+______________________________________________________________________________________________
+
+                🔐 Authentication in Integrations
+           
+Authentication
+├── 1. OAuth 2.0 Flows (Most Common)
+│   ├── A. Web Server Flow
+│   │   ├── Used by apps with UI
+│   │   ├── Redirects user to Salesforce login
+│   │   └── Requires client ID/secret + authorization code exchange
+│   ├── B. JWT Bearer Flow
+│   │   ├── Server-to-server integration (no UI)
+│   │   ├── Uses digital certificate (private key) to sign JWT
+│   │   └── Ideal for secure backend apps or middleware
+│   ├── C. Username-Password Flow
+│   │   ├── Legacy
+│   │   ├── Direct login using stored credentials
+│   │   └── Not recommended (hard to secure, MFA issues)
+│   ├── D. Device Flow
+│   │   └── Used for IoT or devices without browser
+│
+├── 2. Named Credentials (Wrapper Around Auth)
+│   ├── Abstracts OAuth / Basic Auth / Custom Header
+│   ├── Auto manages token refresh
+│   └── Used in Apex + External Services
+
+├── 3. Session ID (Legacy)
+│   ├── Uses current user session (not safe for long-term)
+│   └── Avoid for production use
+
+├── 4. API Keys / Custom Tokens
+│   ├── Sometimes used in outbound calls
+│   └── Often sent in headers (e.g., `Authorization: Bearer <token>`)
+
+______________________________________________________________________________________________
+
+                🔄 Authorization Flow per Case
+                
+Auth Flow per Scenario
+├── Inbound (External → Salesforce)
+│   ├── Use OAuth 2.0 → Salesforce issues access token
+│   ├── External system includes token in requests
+│   ├── Salesforce validates scope + token → processes API call
+│   └── If using Named Credentials: Salesforce manages token refresh
+
+├── Outbound (Salesforce → External)
+│   ├── Use Named Credentials
+│   │   ├── Configure Auth flow (OAuth or Basic)
+│   │   ├── Store client secret securely
+│   │   └── Token automatically added to HTTP request
+│   ├── Manual Auth in Apex
+│   │   ├── Manually set `Authorization` header
+│   │   └── Manage token lifecycle yourself
+│   ├── Platform Events or CDC → Middleware (e.g., Mulesoft)
+│   │   ├── No direct auth in Salesforce
+│   │   └── Middleware handles auth to downstream system
