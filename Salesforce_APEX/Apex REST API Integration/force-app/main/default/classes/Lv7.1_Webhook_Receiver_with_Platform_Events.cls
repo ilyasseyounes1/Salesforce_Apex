@@ -1,3 +1,4 @@
+// ilyasse younes ; 27/07/2025
 @RestResource(urlMapping = '/LeadWebhook/*')
 global with sharing class LeadWebhookService {
 
@@ -19,7 +20,7 @@ global with sharing class LeadWebhookService {
     }
 
     global class WebhookException extends Exception {}
-
+    //custom HMAC signature validation for security:
     private static final String WEBHOOK_SECRET = label.WebhookSecret; // Ideally from Custom Metadata or Custom Label
 
     @HttpPost
@@ -69,6 +70,8 @@ global with sharing class LeadWebhookService {
         if (String.isBlank(requestBody) || String.isBlank(providedSignature)) {
             return false;
         }
+        //Uses Crypto.generateMac() to compute a Base64-encoded HMAC hash of the body using a shared secret.
+        //Compares with the incoming signature to verify integrity.
 
         Blob mac = Crypto.generateMac('HmacSHA256', Blob.valueOf(requestBody), Blob.valueOf(WEBHOOK_SECRET));
         String computedSignature = EncodingUtil.base64Encode(mac);
