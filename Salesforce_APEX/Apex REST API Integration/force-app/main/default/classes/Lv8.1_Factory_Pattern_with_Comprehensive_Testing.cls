@@ -93,6 +93,7 @@ global with sharing class LeadWebhookService {
 //Add custom behavior by implementing process()
 //Inject different logic for different environments or use cases
 
+
 public interface WebhookProcessor {
     void process(LeadWebhookService.LeadWebhookRequest webhookData);
 }
