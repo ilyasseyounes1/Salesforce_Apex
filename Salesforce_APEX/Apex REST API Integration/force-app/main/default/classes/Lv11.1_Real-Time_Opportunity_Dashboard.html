@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opportunity Dashboard</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/cometd@3.1.3/cometd.js"></script>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+    </style>
+</head>
+<body>
+    <h1>Real-Time Opportunity Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Stage</th>
+            </tr>
+        </thead>
+        <tbody id="opportunityTable"></tbody>
+    </table>
+    <script>
+        // Replace with your OAuth token and instance URL
+        const accessToken = 'YOUR_ACCESS_TOKEN';
+        const instanceUrl = 'YOUR_INSTANCE_URL';
+
+        const cometd = new $.CometD();
+        cometd.configure({
+            url: `${instanceUrl}/cometd/59.0`,
+            requestHeaders: { Authorization: `Bearer ${accessToken}` }
+        });
+
+        cometd.handshake(function(h) {
+            if (h.successful) {
+                console.log('Connected to Salesforce');
+                cometd.subscribe('/topic/OpportunityUpdates', function(message) {
+                    const sobject = message.data.sobject;
+                    const row = `<tr>
+                        <td>${sobject.Id}</td>
+                        <td>${sobject.Name}</td>
+                        <td>${sobject.Amount || ''}</td>
+                        <td>${sobject.StageName || ''}</td>
+                    </tr>`;
+                    $('#opportunityTable').prepend(row);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
