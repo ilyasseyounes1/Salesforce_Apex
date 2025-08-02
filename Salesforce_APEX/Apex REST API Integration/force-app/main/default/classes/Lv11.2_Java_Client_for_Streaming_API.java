@@ -42,7 +42,6 @@ pushtopic.ApiVersion = 59.0;
 </project>
  */
 //---------------------------------------------------------------------------------------------------------------
-package com.example;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.*;
