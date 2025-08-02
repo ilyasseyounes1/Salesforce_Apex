@@ -17,6 +17,7 @@
 │   │   │   ├── templates/
 │   │   │   │   ├── dashboard.html
  */
+import java.sql.Time;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -211,3 +212,12 @@ public class App {
     pushTopic.NotifyForFields = 'referenced';
     insert pushTopic;
   */
+
+
+  /*
+        Purpose: Streams Account create/update events (where Name LIKE 'Test%') to a Java-based Spring Boot dashboard.
+        PushTopic: Salesforce metadata object (AccountUpdates) with query SELECT Id, Name FROM Account WHERE Name LIKE 'Test%', publishes to /topic/AccountUpdates.
+        Authentication: OAuth Password Grant Flow via https://login.salesforce.com provides access_token and instance_url (https://.......salesforce.com).
+        Streaming: StreamingService.java uses CometD to subscribe to /topic/AccountUpdates, extracts Id, Name.
+        WebSocket: Spring Boot forwards events to /topic/accounts; dashboard.html displays them at http://localhost:8080.
+   */
