@@ -3,7 +3,7 @@
 
 public class Lv13_Connect_API_for_Communities{
     //Replace with your community ID 
-    private static final String COMMUNITY_ID = '**********';
+    private static final String COMMUNITY_ID = '**********'; //(find it in Setup > Experience Workspaces > Administration > Settings).
     private static final String BASE_URL = 'https://*******';
 
     // Method to retrive the current user's chatter feed :
