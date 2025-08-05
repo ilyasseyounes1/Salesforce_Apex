@@ -1,3 +1,9 @@
+/*
+The code uses MetadataService.CustomObject and MetadataService.CustomField,
+ which are part of the FinancialForce MetadataService Apex class,
+  a third-party wrapper for the Salesforce Metadata API. 
+  This class is not native to Salesforce and must be installed.
+ */
 public class Lv12_Create_Custom_Object_Using_Metadata_API {
     public static void createInvoiceObject(){
         //Init Metadate service 
