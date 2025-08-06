@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="My First LWC Component" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <div class="slds-text-heading_medium slds-m-bottom_small">
+                Hello, {greeting}!
+            </div>
+            <div class="slds-text-body_regular slds-m-bottom_medium">
+                Welcome to Lightning Web Components. Today is {currentDate}.
+            </div>
+            
+            <lightning-input 
+                label="Enter your name" 
+                value={greeting} 
+                onchange={handleNameChange}
+                placeholder="Type your name here...">
+            </lightning-input>
+            
+            <div class="slds-m-top_medium">
+                <lightning-button 
+                    label="Say Hello" 
+                    onclick={handleSayHello}
+                    variant="brand">
+                </lightning-button>
+                
+                <lightning-button 
+                    label="Reset" 
+                    onclick={handleReset}
+                    variant="neutral"
+                    class="slds-m-left_small">
+                </lightning-button>
+            </div>
+            
+            <div class="message-container slds-m-top_medium">
+                {message}
+            </div>
+        </div>
+    </lightning-card>
+</template>
