@@ -1,0 +1,28 @@
+template {
+    padding: 10px;
+}
+.message-container {
+    background-color: #f3f3f3;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border-left: 4px solid #1589ee;
+    font-weight: 500;
+    min-height: 2rem;
+}
+
+.message-container:empty {
+    display: none;
+}
+
+.slds-card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Custom hover effect for buttons */
+lightning-button {
+    transition: transform 0.1s ease-in-out;
+}
+
+lightning-button:hover {
+    transform: translateY(-1px);
+}
