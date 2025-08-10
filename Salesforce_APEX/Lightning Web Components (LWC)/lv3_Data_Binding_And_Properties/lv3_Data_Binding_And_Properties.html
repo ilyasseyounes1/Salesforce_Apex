@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Account Display" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+            <template if:true={account.data}>
+                <h3>{account.data.fields.Name.value}</h3>
+                <p>Industry: {account.data.fields.Industry.value}</p>
+                <lightning-input label="Annual Revenue" value={annualRevenue} onchange={handleRevenueChange}></lightning-input>
+                <p>Updated Revenue: {annualRevenue}</p>
+            </template>
+            <template if:true={error}>
+                <p class="slds-text-color_error">Error: {error.message}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

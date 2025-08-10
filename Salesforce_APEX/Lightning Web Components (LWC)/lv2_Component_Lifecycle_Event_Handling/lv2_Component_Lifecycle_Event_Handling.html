@@ -1,0 +1,150 @@
+
+    
+    <template>
+    <lightning-card title="Lifecycle & Events Demo" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            
+            <!-- Lifecycle Status Display -->
+            <div class="lifecycle-status slds-box slds-theme_shade slds-m-bottom_medium">
+                <h3 class="slds-text-heading_small slds-m-bottom_small">Lifecycle Status:</h3>
+                <div class="slds-grid slds-wrap slds-gutters_small">
+                    <div class="slds-col slds-size_1-of-2">
+                        <span class="slds-badge slds-badge_success" if:true={lifecycleStatus.constructed}>
+                            ✓ Constructed
+                        </span>
+                        <span class="slds-badge slds-badge_light" if:false={lifecycleStatus.constructed}>
+                            ○ Constructed
+                        </span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <span class="slds-badge slds-badge_success" if:true={lifecycleStatus.connected}>
+                            ✓ Connected
+                        </span>
+                        <span class="slds-badge slds-badge_light" if:false={lifecycleStatus.connected}>
+                            ○ Connected
+                        </span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <span class="slds-badge slds-badge_success" if:true={lifecycleStatus.rendered}>
+                            ✓ Rendered ({renderCount} times)
+                        </span>
+                        <span class="slds-badge slds-badge_light" if:false={lifecycleStatus.rendered}>
+                            ○ Rendered
+                        </span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <span class="slds-badge slds-badge_error" if:true={lifecycleStatus.disconnected}>
+                            ✓ Disconnected
+                        </span>
+                        <span class="slds-badge slds-badge_light" if:false={lifecycleStatus.disconnected}>
+                            ○ Disconnected
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Handling Demo -->
+            <div class="event-demo slds-box slds-m-bottom_medium">
+                <h3 class="slds-text-heading_small slds-m-bottom_medium">Event Handling Demo:</h3>
+                
+                <!-- Click Events -->
+                <div class="slds-m-bottom_small">
+                    <lightning-button 
+                        label="Simple Click" 
+                        onclick={handleSimpleClick}
+                        variant="brand">
+                    </lightning-button>
+                    <lightning-button 
+                        label="Click with Data" 
+                        onclick={handleClickWithData}
+                        data-action="custom-action"
+                        data-id="123"
+                        variant="success"
+                        class="slds-m-left_small">
+                    </lightning-button>
+                </div>
+
+                <!-- Input Events -->
+                <div class="slds-m-bottom_small">
+                    <lightning-input 
+                        label="Type here (onChange)" 
+                        value={inputValue} 
+                        onchange={handleInputChange}
+                        placeholder="Watch the events...">
+                    </lightning-input>
+                </div>
+
+                <!-- Keyboard Events -->
+                <div class="slds-m-bottom_small">
+                    <lightning-input 
+                        label="Press keys here" 
+                        value={keyboardValue} 
+                        onkeyup={handleKeyUp}
+                        onkeydown={handleKeyDown}
+                        placeholder="Try Enter, Escape, etc.">
+                    </lightning-input>
+                </div>
+
+                <!-- Focus Events -->
+                <div class="slds-m-bottom_small">
+                    <lightning-input 
+                        label="Focus/Blur Demo" 
+                        value={focusValue} 
+                        onfocus={handleFocus}
+                        onblur={handleBlur}
+                        placeholder="Click in and out">
+                    </lightning-input>
+                </div>
+
+                <!-- Custom Event Trigger -->
+                <div class="slds-m-bottom_small">
+                    <lightning-button 
+                        label="Trigger Custom Event" 
+                        onclick={handleTriggerCustomEvent}
+                        variant="destructive">
+                    </lightning-button>
+                </div>
+            </div>
+
+            <!-- Event Log -->
+            <div class="event-log slds-box slds-theme_inverse">
+                <h3 class="slds-text-heading_small slds-m-bottom_small slds-text-color_inverse">
+                    Event Log: (Last 10 events)
+                </h3>
+                <div class="log-container">
+                    <template for:each={eventLog} for:item="logEntry">
+                        <div key={logEntry.id} class="log-entry slds-text-body_small slds-text-color_inverse">
+                            <strong>{logEntry.timestamp}</strong> - {logEntry.event} - {logEntry.details}
+                        </div>
+                    </template>
+                    <template if:true={isEventLogEmpty}>
+                        <div class="slds-text-color_inverse-weak">No events yet...</div>
+                    </template>
+                </div>
+                <div class="slds-m-top_small">
+                    <lightning-button 
+                        label="Clear Log" 
+                        onclick={clearEventLog}
+                        variant="neutral"
+                        size="small">
+                    </lightning-button>
+                </div>
+            </div>
+
+            <!-- Component Controls -->
+            <div class="slds-m-top_medium slds-text-align_center">
+                <lightning-button 
+                    label="Force Re-render" 
+                    onclick={forceRerender}
+                    variant="brand-outline">
+                </lightning-button>
+                <lightning-button 
+                    label="Simulate Error" 
+                    onclick={simulateError}
+                    variant="destructive-text"
+                    class="slds-m-left_small">
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

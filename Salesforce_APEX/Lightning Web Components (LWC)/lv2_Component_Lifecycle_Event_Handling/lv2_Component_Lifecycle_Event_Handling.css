@@ -1,0 +1,61 @@
+.lifecycle-status {
+    background: linear-gradient(135deg, #f3f3f3 0%, #e8e8e8 100%);
+    border-left: 4px solid #1589ee;
+}
+
+.event-demo {
+    border-left: 4px solid #00d924;
+}
+
+.event-log {
+    background: #2c2c2c;
+    min-height: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.log-container {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.log-entry {
+    padding: 2px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.log-entry:last-child {
+    border-bottom: none;
+}
+
+/* Animation for new log entries */
+.log-entry {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive badges */
+.slds-badge {
+    margin: 2px;
+    font-size: 0.7rem;
+}
+
+/* Custom button hover effects */
+lightning-button {
+    transition: transform 0.1s ease;
+}
+
+lightning-button:hover {
+    transform: translateY(-1px);
+}

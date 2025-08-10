@@ -1,0 +1,138 @@
+<!-- ILyasse younes 10/8/2025-->
+<!-- studentProfileCard.html -->
+<template>
+    <div class="slds-card">
+        <!-- Card Header using @api property -->
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span>{cardTitle}</span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        
+        <!-- Card Body -->
+        <div class="slds-card__body slds-card__body_inner">
+            <!-- Loading State -->
+            <template if:false={isDataLoaded}>
+                <div class="slds-align_absolute-center slds-p-vertical_large">
+                    <lightning-spinner alternative-text="Loading student data..."></lightning-spinner>
+                </div>
+            </template>
+            
+            <!-- Error State -->
+            <template if:true={hasError}>
+                <div class="slds-notify slds-notify_alert slds-alert_error">
+                    <span class="slds-assistive-text">Error</span>
+                    <h2>Unable to load student data</h2>
+                </div>
+            </template>
+            
+            <!-- Main Content -->
+            <template if:true={isDataLoaded}>
+                <!-- Student Name Section (demonstrating reactive data) -->
+                <div class="slds-form-element slds-m-bottom_medium">
+                    <label class="slds-form-element__label slds-text-title_caps">Student Name</label>
+                    <template if:false={isEditing}>
+                        <div class="slds-form-element__static">
+                            <strong>{studentName}</strong>
+                        </div>
+                    </template>
+                    <template if:true={isEditing}>
+                        <input 
+                            type="text" 
+                            class="slds-input" 
+                            value={localName}
+                            onchange={handleNameChange}
+                            placeholder="Enter student name">
+                    </template>
+                </div>
+                
+                <!-- Contact Info (using @api showContactInfo) -->
+                <template if:true={showContactInfo}>
+                    <div class="slds-grid slds-wrap slds-gutters slds-m-bottom_medium">
+                        <div class="slds-col slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label slds-text-title_caps">Email</label>
+                                <div class="slds-form-element__static">{studentEmail}</div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label slds-text-title_caps">Phone</label>
+                                <div class="slds-form-element__static">
+                                    {studentRecord.data.fields.Phone.value}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                
+                <!-- Student Stats (demonstrating @track and reactive objects) -->
+                <div class="slds-box slds-theme_shade slds-m-bottom_medium">
+                    <h3 class="slds-text-heading_small slds-m-bottom_small">Academic Progress</h3>
+                    
+                    <div class="slds-grid slds-wrap slds-gutters_small">
+                        <div class="slds-col slds-size_1-of-3">
+                            <div class="stat-item">
+                                <div class="slds-text-heading_large">{studentStats.coursesCompleted}</div>
+                                <div class="slds-text-body_small">Courses Completed</div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                            <div class="stat-item">
+                                <div class={gradeClass}>
+                                    <span class="slds-text-heading_large">{studentStats.currentGrade}</span>
+                                </div>
+                                <div class="slds-text-body_small">Current Grade</div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                            <div class="stat-item">
+                                <div class="slds-text-heading_large">{studentStats.attendanceRate}%</div>
+                                <div class="slds-text-body_small">Attendance Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Grade Selector -->
+                    <div class="slds-form-element slds-m-top_small">
+                        <label class="slds-form-element__label">Update Grade</label>
+                        <div class="slds-form-element__control">
+                            <select class="slds-select" onchange={handleGradeChange}>
+                                <option value="A" selected={studentStats.currentGrade.A}>A - Excellent</option>
+                                <option value="B" selected={studentStats.currentGrade.B}>B - Good</option>
+                                <option value="C" selected={studentStats.currentGrade.C}>C - Average</option>
+                                <option value="D" selected={studentStats.currentGrade.D}>D - Below Average</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+        
+        <!-- Card Footer with Actions -->
+        <div class="slds-card__footer">
+            <div class="slds-grid slds-grid_align-spread">
+                <button 
+                    class="slds-button slds-button_neutral"
+                    onclick={handleEditToggle}>
+                    <template if:true={isEditing}>
+                        Cancel Edit
+                    </template>
+                    <template if:false={isEditing}>
+                        Edit Name
+                    </template>
+                </button>
+                <button 
+                    class="slds-button slds-button_brand"
+                    onclick={handleUpdateStats}
+                    disabled={isEditing}>
+                    Update Progress
+                </button>
+            </div>
+        </div>
+    </div>
+</template>
