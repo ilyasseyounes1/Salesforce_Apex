@@ -1,5 +1,5 @@
 @isTest
-private clas commonTestSetup {
+private class commonTestSetup {
     @TestSetup
     static void makeData(){
         List<Account> testAccts = new List<Account>();
