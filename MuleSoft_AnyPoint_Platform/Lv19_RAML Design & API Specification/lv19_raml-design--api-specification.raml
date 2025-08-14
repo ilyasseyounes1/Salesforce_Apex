@@ -1,0 +1,89 @@
+#%RAML 1.0
+title: Customer API
+version: v1
+baseUri: /api/{version}
+mediaType: application/json
+
+types:
+  Customer:
+    type: object
+    properties:
+      id: string
+      name: string
+      email: string
+      phone?: string
+    example:
+      id: "C001"
+      name: "John Doe"
+      email: "john.doe@example.com"
+      phone: "555-1234"
+
+/customers:
+  get:
+    description: Retrieve a list of customers
+    queryParameters:
+      limit:
+        type: integer
+        default: 10
+        required: false
+      name:
+        type: string
+        required: false
+    responses:
+      200:
+        body:
+          application/json:
+            type: Customer[]
+            example:
+              - id: "C001"
+                name: "John Doe"
+                email: "john.doe@example.com"
+                phone: "555-1234"
+              - id: "C002"
+                name: "Jane Smith"
+                email: "jane.smith@example.com"
+  post:
+    description: Create a new customer
+    body:
+      application/json:
+        type: Customer
+        example:
+          id: "C003"
+          name: "Alice Brown"
+          email: "alice.brown@example.com"
+          phone: "555-5678"
+    responses:
+      201:
+        body:
+          application/json:
+            type: Customer
+            example:
+              id: "C003"
+              name: "Alice Brown"
+              email: "alice.brown@example.com"
+              phone: "555-5678"
+
+#| **Keyword**                 | **Use / Meaning**                                                                                   |
+#| --------------------------- | --------------------------------------------------------------------------------------------------- |
+#| `#%RAML 1.0`                | Declares the RAML version being used; required at the top of the file.                              |
+#| `title`                     | Human-readable name of the API (for documentation purposes).                                        |
+#| `version`                   | API version number (used in `baseUri` and for versioning).                                          |
+#| `baseUri`                   | Base path for all endpoints; `{version}` is a placeholder variable replaced by `version`.           |
+#| `mediaType`                 | Default format for request and response bodies (e.g., `application/json`).                          |
+#| `types`                     | Section to define reusable data structures (custom types) for the API.                              |
+#| `type`                      | Specifies the data type (built-in types like `string`, `integer`, or custom types like `Customer`). |
+#| `properties`                | Lists the fields of an object type and their data types.                                            |
+#| `?` (after a property name) | Marks the property as optional.                                                                     |
+#| `example`                   | Provides sample data for documentation, testing, and mocking.                                       |
+#| `/customers`                | Defines a resource (API endpoint). Starts with `/`.                                                 |
+#| `get`                       | HTTP method for retrieving data from the resource.                                                  |
+#| `post`                      | HTTP method for creating new data in the resource.                                                  |
+#| `description`               | Text explaining the purpose of an endpoint or method.                                               |
+#| `queryParameters`           | Lists parameters sent in the URL query string (e.g., `?limit=10`).                                  |
+#| `default`                   | Specifies the value used if the parameter is not provided.                                          |
+#| `required`                  | Marks whether a field or parameter must be provided (`true` or `false`).                            |
+#| `responses`                 | Lists possible HTTP responses for a method (status codes + body structure).                         |
+#| `200`, `201`                | HTTP status codes (`200` = success, `201` = created).                                               |
+#| `body`                      | Describes the structure and media type of the request or response body.                             |
+#| `application/json`          | Specifies the format (MIME type) of the body content.                                               |
+#| `Customer[]`                | An array (list) of `Customer` objects.                                                              |
