@@ -1,0 +1,91 @@
+#%RAML 1.0
+title: Lv19_RAML_Sys-bank-API
+
+types:
+  CreateAccountRequest:
+    type: object
+    properties:
+      accountNumber:
+        type: number
+      address:
+        type: array
+        items:
+          type: object
+          properties:
+            type:
+              type: string
+              enum: ["home", "work"]
+            city:
+              type: string
+              minLength: 3
+              maxLength: 10
+            zip:
+              type: number
+              minimum: 0
+              maximum: 999
+    example:
+      accountNumber: 0
+      address:
+        - type: home
+          city: Marrakech
+          zip: 0
+
+resourceTypes:
+  healthcheck:
+    get:
+      description: Get <<resourcePathName | !uppercase>>
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                time: "8:32"
+                heath: "ok"
+
+traits:
+  typeOfVerification:
+    queryParameters:
+      username: string
+      password: string
+      mobileOtp: string
+      <<typeOfOtp>>: string
+
+/health:
+  type: healthcheck
+
+/oneMorehealth:
+  type: healthcheck
+
+/getAccountSummary:
+  description: "To get bank account details of a customer"
+  get:
+    queryParameters:
+      accountNumber:
+        type: number
+    is:
+      - { typeOfVerification : { typeOfOtp: "mobileOtp" } }
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              BankAccountNumber: 2343
+              Name: "Sravan"
+              Country: "Morocco"
+
+/createAccount:
+  description: "To create a new account"
+  post:
+    queryParameters:
+      branch: string
+    is:
+      - { typeOfVerification : { typeOfOtp: "emailOtp" } }
+    body:
+      application/json:
+        type: CreateAccountRequest
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              message: "Account created"

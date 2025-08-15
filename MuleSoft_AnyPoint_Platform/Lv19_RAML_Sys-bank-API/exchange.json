@@ -1,0 +1,11 @@
+{
+  "main": "lv19_raml_sys-bank-api.raml",
+  "name": "Lv19_RAML_Sys-bank-API",
+  "classifier": "raml",
+  "organizationId": "",
+  "descriptorVersion": "1.0.0",
+  "groupId": "",
+  "assetId": "lv19_raml_sys-bank-api",
+  "version": "1.0.0",
+  "tags": []
+}
