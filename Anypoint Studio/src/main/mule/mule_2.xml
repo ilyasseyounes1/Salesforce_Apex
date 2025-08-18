@@ -1,6 +1,6 @@
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
     <http:listener-config doc:id="fdc06c19-32f9-46d3-a3ee-c49453f37624" doc:name="HTTP Listener config" name="HTTP_Listener_config">
-        <http:listener-connection host="0.0.0.0" port="8081"></http:listener-connection>
+        <http:listener-connection host="0.0.0.0"></http:listener-connection>
     </http:listener-config>
     <http:request-config doc:id="720d6968-5d2c-40d2-88a0-45235fed2e61" doc:name="HTTP Request configuration" name="HTTP_Request_configuration"></http:request-config>
     <flow doc:id="c51c69b1-0e55-408d-ad78-5443dc2b94ef" name="mule_2Flow">
