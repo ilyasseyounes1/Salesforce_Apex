@@ -1,0 +1,3 @@
+# best-practices.md
+
+Comprehensive guide coming soon...

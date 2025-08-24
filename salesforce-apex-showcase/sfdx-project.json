@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "projects",
+      "default": true
+    }
+  ],
+  "name": "salesforce-apex-showcase",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "60.0"
+}

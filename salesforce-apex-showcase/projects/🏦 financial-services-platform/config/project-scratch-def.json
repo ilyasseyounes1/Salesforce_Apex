@@ -1,0 +1,13 @@
+{
+  "orgName": "Apex Showcase Scratch Org",
+  "edition": "Developer",
+  "features": ["EnableSetPasswordInApi", "MultiCurrency", "PersonAccounts"],
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    }
+  }
+}

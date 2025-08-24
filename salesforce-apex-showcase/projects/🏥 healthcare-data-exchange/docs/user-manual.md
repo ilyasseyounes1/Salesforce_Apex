@@ -1,0 +1,3 @@
+# User Manual
+
+Comprehensive user documentation...

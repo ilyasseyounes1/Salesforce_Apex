@@ -1,0 +1,3 @@
+# soap-integration.md
+
+Comprehensive guide coming soon...

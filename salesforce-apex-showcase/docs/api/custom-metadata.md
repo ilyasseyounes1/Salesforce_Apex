@@ -1,0 +1,3 @@
+# custom-metadata.md
+
+Comprehensive guide coming soon...

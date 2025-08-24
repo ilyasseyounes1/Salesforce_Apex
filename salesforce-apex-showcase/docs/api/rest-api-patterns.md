@@ -1,0 +1,3 @@
+# rest-api-patterns.md
+
+Comprehensive guide coming soon...

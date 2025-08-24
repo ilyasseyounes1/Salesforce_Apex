@@ -1,0 +1,20 @@
+# Salesforce specific
+.sfdx/
+.localdevserver/
+*.tmp
+*.cache
+
+# IDE specific
+.vscode/settings.json
+*.sublime-*
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Node modules
+node_modules/

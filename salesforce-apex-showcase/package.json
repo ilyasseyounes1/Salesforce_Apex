@@ -1,0 +1,15 @@
+{
+  "name": "salesforce-apex-showcase",
+  "version": "1.0.0",
+  "description": "Professional Salesforce Apex Portfolio & Learning Platform",
+  "scripts": {
+    "test": "sfdx force:apex:test:run",
+    "deploy": "sfdx force:source:deploy",
+    "scratch:create": "sfdx force:org:create -f config/project-scratch-def.json"
+  },
+  "devDependencies": {
+    "@salesforce/cli": "latest",
+    "prettier": "^2.8.0",
+    "eslint": "^8.0.0"
+  }
+}
