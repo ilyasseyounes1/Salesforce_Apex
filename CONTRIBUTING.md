@@ -1,393 +1,767 @@
-# Salesforce Apex Showcase - Professional Portfolio
+# Salesforce Apex Showcase - Projects details Structure 
 
 ```
-salesforce-apex-showcase/
-│
-├── 📄 README.md                          # Main portfolio showcase & overview
-├── 📄 LICENSE                            # Apache 2.0 License
-├── 📄 .gitignore                         # Git ignore (Salesforce specific)
-├── 📄 sfdx-project.json                  # SFDX project configuration
-├── 📄 package.json                       # Node.js dependencies for tooling
-│
-├── 📁 docs/                              # Comprehensive documentation
-│   ├── 📄 getting-started.md             # Quick setup & environment guide
-│   ├── 📄 roadmap-detailed.md            # Complete learning pathway
-│   ├── 📄 best-practices.md              # Apex coding standards & patterns
-│   ├── 📄 performance-guide.md           # Governor limits & optimization
-│   ├── 📄 security-guide.md              # Security best practices & OWASP
-│   ├── 📄 deployment-guide.md            # CI/CD & DevOps practices
-│   ├── 📄 troubleshooting.md             # Common issues & debugging
-│   ├── 📄 interview-prep.md              # Technical interview preparation
-│   └── 📁 api/                           # API documentation
-│       ├── 📄 rest-api-patterns.md       # REST API design patterns
-│       ├── 📄 soap-integration.md        # SOAP integration examples
-│       ├── 📄 bulk-api-guide.md          # Bulk API implementation
-│       ├── 📄 streaming-api.md           # Platform Events & Change Events
-│       └── 📄 custom-metadata.md         # Custom Metadata API usage
-│
-├── 📁 projects/                          # Enterprise project portfolio
-│   ├── 📁 financial-services-platform/  # Banking & finance solution
-│   │   ├── 📄 README.md                  # Project overview & architecture
-│   │   ├── 📄 business-requirements.md   # Functional requirements
-│   │   ├── 📄 technical-design.md        # System architecture & design
-│   │   ├── 📄 security-model.md          # Security implementation
-│   │   ├── 📁 force-app/main/default/
-│   │   │   ├── 📁 classes/
-│   │   │   │   ├── 📄 AccountManager.cls           # Account management
-│   │   │   │   ├── 📄 LoanProcessor.cls            # Loan processing logic
-│   │   │   │   ├── 📄 RiskCalculator.cls           # Risk assessment
-│   │   │   │   ├── 📄 ComplianceValidator.cls      # Regulatory compliance
-│   │   │   │   ├── 📄 PaymentScheduler.cls         # Payment scheduling
-│   │   │   │   └── 📄 FraudDetectionService.cls    # Fraud detection
-│   │   │   ├── 📁 triggers/
-│   │   │   │   ├── 📄 AccountTrigger.trigger        # Account trigger
-│   │   │   │   ├── 📄 LoanTrigger.trigger          # Loan trigger
-│   │   │   │   └── 📄 PaymentTrigger.trigger       # Payment trigger
-│   │   │   ├── 📁 triggerHandlers/
-│   │   │   │   ├── 📄 AccountTriggerHandler.cls     # Account trigger logic
-│   │   │   │   ├── 📄 LoanTriggerHandler.cls       # Loan trigger logic
-│   │   │   │   └── 📄 PaymentTriggerHandler.cls    # Payment trigger logic
-│   │   │   ├── 📁 lwc/
-│   │   │   │   ├── 📁 loanApplication/              # Loan application LWC
-│   │   │   │   ├── 📁 paymentDashboard/            # Payment dashboard
-│   │   │   │   └── 📁 riskAssessment/              # Risk assessment UI
-│   │   │   ├── 📁 objects/
-│   │   │   │   ├── 📄 Loan__c.object-meta.xml      # Loan custom object
-│   │   │   │   ├── 📄 Payment__c.object-meta.xml   # Payment object
-│   │   │   │   └── 📄 RiskProfile__c.object-meta.xml # Risk profile
-│   │   │   ├── 📁 workflows/
-│   │   │   └── 📁 flows/
-│   │   ├── 📁 config/
-│   │   │   ├── 📄 project-scratch-def.json         # Scratch org definition
-│   │   │   └── 📄 permission-sets.json             # Permission configurations
-│   │   ├── 📁 data/
-│   │   │   ├── 📄 sample-accounts.json             # Test account data
-│   │   │   ├── 📄 sample-loans.json                # Test loan data
-│   │   │   └── 📄 test-scenarios.json              # Test case data
-│   │   ├── 📁 tests/
-│   │   │   ├── 📄 AccountManagerTest.cls           # Unit tests
-│   │   │   ├── 📄 LoanProcessorTest.cls            # Unit tests
-│   │   │   ├── 📄 IntegrationTests.cls             # Integration tests
-│   │   │   └── 📄 TestDataFactory.cls              # Test data factory
-│   │   └── 📁 docs/
-│   │       ├── 📄 deployment-notes.md              # Deployment instructions
-│   │       ├── 📄 user-manual.md                   # End user documentation
-│   │       ├── 📁 images/
-│   │       │   ├── 📄 system-architecture.png      # Architecture diagrams
-│   │       │   ├── 📄 data-model.png               # ERD diagrams
-│   │       │   └── 📄 ui-mockups.png               # UI designs
-│   │       └── 📁 videos/
-│   │           └── 📄 demo-walkthrough.mp4         # Product demonstration
+├── 📁 projects/                                  # Enterprise project portfolio
 │   │
-│   ├── 📁 healthcare-data-exchange/      # Healthcare integration platform
-│   │   ├── 📄 README.md
-│   │   ├── 📄 hipaa-compliance.md        # HIPAA compliance documentation
+│   ├── 📁 financial-services-platform/          # Banking & finance solution
+│   │   ├── 📄 README.md                          # Project overview & architecture
+│   │   ├── 📄 business-requirements.md           # Functional requirements
+│   │   ├── 📄 technical-design.md                # System architecture & design
+│   │   ├── 📄 security-model.md                  # Security implementation
+│   │   ├── 📄 data-model.md                      # Entity relationship diagram
+│   │   ├── 📄 integration-architecture.md        # Integration design
+│   │   ├── 📄 performance-considerations.md      # Performance optimization
+│   │   ├── 📄 compliance-documentation.md        # Regulatory compliance
+│   │   │
+│   │   ├── 📁 force-app/main/default/
+│   │   │   ├── 📁 applications/
+│   │   │   │   ├── 📄 Financial_Services.app-meta.xml  # Main application
+│   │   │   │   ├── 📄 Loan_Management.app-meta.xml     # Loan management app
+│   │   │   │   └── 📄 Risk_Management.app-meta.xml     # Risk management app
+│   │   │   │
+│   │   │   ├── 📁 classes/
+│   │   │   │   ├── 📁 controllers/                     # UI controllers
+│   │   │   │   │   ├── 📄 LoanApplicationController.cls
+│   │   │   │   │   ├── 📄 AccountDashboardController.cls
+│   │   │   │   │   ├── 📄 PaymentPortalController.cls
+│   │   │   │   │   └── 📄 RiskAssessmentController.cls
+│   │   │   │   ├── 📁 services/                        # Business logic services
+│   │   │   │   │   ├── 📄 AccountService.cls
+│   │   │   │   │   ├── 📄 LoanService.cls
+│   │   │   │   │   ├── 📄 PaymentService.cls
+│   │   │   │   │   ├── 📄 RiskCalculationService.cls
+│   │   │   │   │   ├── 📄 ComplianceService.cls
+│   │   │   │   │   ├── 📄 NotificationService.cls
+│   │   │   │   │   └── 📄 ReportingService.cls
+│   │   │   │   ├── 📁 managers/                        # Data access managers
+│   │   │   │   │   ├── 📄 AccountManager.cls
+│   │   │   │   │   ├── 📄 LoanManager.cls
+│   │   │   │   │   ├── 📄 PaymentManager.cls
+│   │   │   │   │   ├── 📄 DocumentManager.cls
+│   │   │   │   │   └── 📄 CreditScoreManager.cls
+│   │   │   │   ├── 📁 processors/                      # Processing engines
+│   │   │   │   │   ├── 📄 LoanProcessor.cls
+│   │   │   │   │   ├── 📄 PaymentProcessor.cls
+│   │   │   │   │   ├── 📄 InterestCalculator.cls
+│   │   │   │   │   ├── 📄 FraudDetectionProcessor.cls
+│   │   │   │   │   └── 📄 CreditDecisionEngine.cls
+│   │   │   │   ├── 📁 validators/                      # Validation classes
+│   │   │   │   │   ├── 📄 LoanApplicationValidator.cls
+│   │   │   │   │   ├── 📄 PaymentValidator.cls
+│   │   │   │   │   ├── 📄 ComplianceValidator.cls
+│   │   │   │   │   └── 📄 DocumentValidator.cls
+│   │   │   │   ├── 📁 integrations/                    # External integrations
+│   │   │   │   │   ├── 📄 CreditBureauIntegration.cls
+│   │   │   │   │   ├── 📄 CoreBankingIntegration.cls
+│   │   │   │   │   ├── 📄 PaymentGatewayIntegration.cls
+│   │   │   │   │   ├── 📄 RegulatoryReportingIntegration.cls
+│   │   │   │   │   └── 📄 DocumentManagementIntegration.cls
+│   │   │   │   ├── 📁 utilities/                       # Utility classes
+│   │   │   │   │   ├── 📄 FinancialCalculationUtils.cls
+│   │   │   │   │   ├── 📄 DateTimeUtils.cls
+│   │   │   │   │   ├── 📄 CurrencyConversionUtils.cls
+│   │   │   │   │   ├── 📄 EncryptionUtils.cls
+│   │   │   │   │   └── 📄 ValidationUtils.cls
+│   │   │   │   ├── 📁 schedulers/                      # Scheduled jobs
+│   │   │   │   │   ├── 📄 PaymentScheduler.cls
+│   │   │   │   │   ├── 📄 InterestCalculationScheduler.cls
+│   │   │   │   │   ├── 📄 ComplianceReportScheduler.cls
+│   │   │   │   │   └── 📄 DataArchivalScheduler.cls
+│   │   │   │   └── 📁 batch/                           # Batch processing
+│   │   │   │       ├── 📄 LoanStatusUpdateBatch.cls
+│   │   │   │       ├── 📄 PaymentProcessingBatch.cls
+│   │   │   │       ├── 📄 InterestAccrualBatch.cls
+│   │   │   │       └── 📄 RiskReassessmentBatch.cls
+│   │   │   │
+│   │   │   ├── 📁 triggers/                           # Database triggers
+│   │   │   │   ├── 📄 AccountTrigger.trigger
+│   │   │   │   ├── 📄 LoanTrigger.trigger
+│   │   │   │   ├── 📄 PaymentTrigger.trigger
+│   │   │   │   ├── 📄 DocumentTrigger.trigger
+│   │   │   │   └── 📄 ContactTrigger.trigger
+│   │   │   │
+│   │   │   ├── 📁 triggerHandlers/                    # Trigger handler classes
+│   │   │   │   ├── 📄 AccountTriggerHandler.cls
+│   │   │   │   ├── 📄 LoanTriggerHandler.cls
+│   │   │   │   ├── 📄 PaymentTriggerHandler.cls
+│   │   │   │   ├── 📄 DocumentTriggerHandler.cls
+│   │   │   │   └── 📄 ContactTriggerHandler.cls
+│   │   │   │
+│   │   │   ├── 📁 lwc/                               # Lightning Web Components
+│   │   │   │   ├── 📁 loanApplication/
+│   │   │   │   │   ├── 📄 loanApplication.html
+│   │   │   │   │   ├── 📄 loanApplication.js
+│   │   │   │   │   ├── 📄 loanApplication.css
+│   │   │   │   │   └── 📄 loanApplication.js-meta.xml
+│   │   │   │   ├── 📁 paymentDashboard/
+│   │   │   │   │   ├── 📄 paymentDashboard.html
+│   │   │   │   │   ├── 📄 paymentDashboard.js
+│   │   │   │   │   ├── 📄 paymentDashboard.css
+│   │   │   │   │   └── 📄 paymentDashboard.js-meta.xml
+│   │   │   │   ├── 📁 riskAssessment/
+│   │   │   │   ├── 📁 accountSummary/
+│   │   │   │   ├── 📁 loanCalculator/
+│   │   │   │   ├── 📁 documentUploader/
+│   │   │   │   ├── 📁 complianceTracker/
+│   │   │   │   └── 📁 notificationCenter/
+│   │   │   │
+│   │   │   ├── 📁 aura/                              # Aura Components (Legacy)
+│   │   │   │   ├── 📁 LoanApplicationForm/
+│   │   │   │   ├── 📁 PaymentScheduler/
+│   │   │   │   └── 📁 RiskDashboard/
+│   │   │   │
+│   │   │   ├── 📁 objects/                           # Custom objects
+│   │   │   │   ├── 📄 Loan__c.object-meta.xml
+│   │   │   │   ├── 📄 Payment__c.object-meta.xml
+│   │   │   │   ├── 📄 RiskProfile__c.object-meta.xml
+│   │   │   │   ├── 📄 Document__c.object-meta.xml
+│   │   │   │   ├── 📄 ComplianceRecord__c.object-meta.xml
+│   │   │   │   └── 📄 AuditLog__c.object-meta.xml
+│   │   │   │
+│   │   │   ├── 📁 fields/                            # Custom fields
+│   │   │   │   ├── 📁 Account/
+│   │   │   │   ├── 📁 Contact/
+│   │   │   │   ├── 📁 Loan__c/
+│   │   │   │   ├── 📁 Payment__c/
+│   │   │   │   └── 📁 RiskProfile__c/
+│   │   │   │
+│   │   │   ├── 📁 validationRules/                   # Validation rules
+│   │   │   │   ├── 📁 Account/
+│   │   │   │   ├── 📁 Loan__c/
+│   │   │   │   └── 📁 Payment__c/
+│   │   │   │
+│   │   │   ├── 📁 workflows/                         # Workflow rules
+│   │   │   │   ├── 📄 Loan__c.workflow-meta.xml
+│   │   │   │   └── 📄 Payment__c.workflow-meta.xml
+│   │   │   │
+│   │   │   ├── 📁 flows/                             # Process Builder & Flow
+│   │   │   │   ├── 📄 LoanApprovalProcess.flow-meta.xml
+│   │   │   │   ├── 📄 PaymentProcessing.flow-meta.xml
+│   │   │   │   └── 📄 ComplianceChecking.flow-meta.xml
+│   │   │   │
+│   │   │   ├── 📁 layouts/                           # Page layouts
+│   │   │   │   ├── 📁 Account/
+│   │   │   │   ├── 📁 Contact/
+│   │   │   │   ├── 📁 Loan__c/
+│   │   │   │   └── 📁 Payment__c/
+│   │   │   │
+│   │   │   ├── 📁 permissionsets/                    # Permission sets
+│   │   │   │   ├── 📄 LoanOfficer.permissionset-meta.xml
+│   │   │   │   ├── 📄 RiskAnalyst.permissionset-meta.xml
+│   │   │   │   ├── 📄 ComplianceOfficer.permissionset-meta.xml
+│   │   │   │   └── 📄 PaymentProcessor.permissionset-meta.xml
+│   │   │   │
+│   │   │   ├── 📁 profiles/                          # User profiles
+│   │   │   │   ├── 📄 Loan Manager.profile-meta.xml
+│   │   │   │   ├── 📄 Risk Analyst.profile-meta.xml
+│   │   │   │   └── 📄 Customer Service.profile-meta.xml
+│   │   │   │
+│   │   │   ├── 📁 tabs/                              # Custom tabs
+│   │   │   │   ├── 📄 Loan__c.tab-meta.xml
+│   │   │   │   ├── 📄 Payment__c.tab-meta.xml
+│   │   │   │   └── 📄 RiskDashboard.tab-meta.xml
+│   │   │   │
+│   │   │   ├── 📁 reports/                           # Custom reports
+│   │   │   │   ├── 📁 LoanReports/
+│   │   │   │   │   ├── 📄 ActiveLoansReport.report-meta.xml
+│   │   │   │   │   ├── 📄 LoanPerformanceReport.report-meta.xml
+│   │   │   │   │   └── 📄 DefaultRiskReport.report-meta.xml
+│   │   │   │   ├── 📁 PaymentReports/
+│   │   │   │   │   ├── 📄 PaymentSummary.report-meta.xml
+│   │   │   │   │   └── 📄 OverduePayments.report-meta.xml
+│   │   │   │   └── 📁 ComplianceReports/
+│   │   │   │       ├── 📄 RegulatoryCompliance.report-meta.xml
+│   │   │   │       └── 📄 AuditTrail.report-meta.xml
+│   │   │   │
+│   │   │   ├── 📁 dashboards/                        # Custom dashboards
+│   │   │   │   ├── 📄 ExecutiveDashboard.dashboard-meta.xml
+│   │   │   │   ├── 📄 RiskDashboard.dashboard-meta.xml
+│   │   │   │   └── 📄 OperationsDashboard.dashboard-meta.xml
+│   │   │   │
+│   │   │   ├── 📁 customMetadata/                    # Custom metadata
+│   │   │   │   ├── 📄 InterestRate.md-meta.xml
+│   │   │   │   ├── 📄 ComplianceRule.md-meta.xml
+│   │   │   │   └── 📄 RiskThreshold.md-meta.xml
+│   │   │   │
+│   │   │   ├── 📁 staticresources/                   # Static resources
+│   │   │   │   ├── 📄 FinancialIcons.resource-meta.xml
+│   │   │   │   ├── 📄 LoanDocuments.resource-meta.xml
+│   │   │   │   └── 📄 CompanyBranding.resource-meta.xml
+│   │   │   │
+│   │   │   └── 📁 sharingRules/                      # Sharing rules
+│   │   │       ├── 📄 Loan__c.sharingRules-meta.xml
+│   │   │       └── 📄 Payment__c.sharingRules-meta.xml
+│   │   │
+│   │   ├── 📁 config/                                # Configuration files
+│   │   │   ├── 📄 project-scratch-def.json           # Scratch org definition
+│   │   │   ├── 📄 permission-sets.json               # Permission configurations
+│   │   │   ├── 📄 environment-settings.json          # Environment-specific settings
+│   │   │   ├── 📄 data-import-plan.json              # Data import configuration
+│   │   │   └── 📄 feature-flags.json                 # Feature flag configuration
+│   │   │
+│   │   ├── 📁 data/                                  # Sample and test data
+│   │   │   ├── 📄 sample-accounts.json               # Test account data
+│   │   │   ├── 📄 sample-contacts.json               # Test contact data
+│   │   │   ├── 📄 sample-loans.json                  # Test loan data
+│   │   │   ├── 📄 sample-payments.json               # Test payment data
+│   │   │   ├── 📄 test-scenarios.json                # Test case data
+│   │   │   ├── 📄 performance-test-data.json         # Performance test data
+│   │   │   └── 📄 integration-test-data.json         # Integration test data
+│   │   │
+│   │   ├── 📁 tests/                                 # Test classes
+│   │   │   ├── 📁 unit/                              # Unit tests
+│   │   │   │   ├── 📄 AccountServiceTest.cls
+│   │   │   │   ├── 📄 LoanServiceTest.cls
+│   │   │   │   ├── 📄 PaymentServiceTest.cls
+│   │   │   │   ├── 📄 RiskCalculationServiceTest.cls
+│   │   │   │   └── 📄 ComplianceServiceTest.cls
+│   │   │   ├── 📁 integration/                       # Integration tests
+│   │   │   │   ├── 📄 LoanProcessingIntegrationTest.cls
+│   │   │   │   ├── 📄 PaymentProcessingIntegrationTest.cls
+│   │   │   │   └── 📄 CreditBureauIntegrationTest.cls
+│   │   │   ├── 📁 performance/                       # Performance tests
+│   │   │   │   ├── 📄 BulkLoanProcessingTest.cls
+│   │   │   │   └── 📄 PaymentBatchProcessingTest.cls
+│   │   │   ├── 📁 utilities/                         # Test utilities
+│   │   │   │   ├── 📄 FinancialTestDataFactory.cls
+│   │   │   │   ├── 📄 MockCreditBureauService.cls
+│   │   │   │   ├── 📄 TestAssertionUtils.cls
+│   │   │   │   └── 📄 PerformanceTestUtils.cls
+│   │   │   └── 📁 suites/                            # Test suites
+│   │   │       ├── 📄 SmokeTesting.testSuite-meta.xml
+│   │   │       ├── 📄 RegressionTesting.testSuite-meta.xml
+│   │   │       └── 📄 PerformanceTesting.testSuite-meta.xml
+│   │   │
+│   │   ├── 📁 scripts/                               # Automation scripts
+│   │   │   ├── 📄 deploy.sh                          # Deployment script
+│   │   │   ├── 📄 run-tests.sh                       # Test execution script
+│   │   │   ├── 📄 data-setup.sh                      # Data setup script
+│   │   │   ├── 📄 environment-setup.sh               # Environment setup
+│   │   │   └── 📄 cleanup.sh                         # Cleanup script
+│   │   │
+│   │   ├── 📁 docs/                                  # Project documentation
+│   │   │   ├── 📄 installation-guide.md              # Installation instructions
+│   │   │   ├── 📄 user-manual.md                     # End user documentation
+│   │   │   ├── 📄 admin-guide.md                     # Administrator guide
+│   │   │   ├── 📄 developer-guide.md                 # Developer documentation
+│   │   │   ├── 📄 deployment-notes.md                # Deployment instructions
+│   │   │   ├── 📄 troubleshooting-guide.md           # Troubleshooting guide
+│   │   │   ├── 📄 release-notes.md                   # Release notes
+│   │   │   ├── 📁 images/
+│   │   │   │   ├── 📄 system-architecture.png        # Architecture diagrams
+│   │   │   │   ├── 📄 data-model.png                 # ERD diagrams
+│   │   │   │   ├── 📄 user-interface-mockups.png     # UI designs
+│   │   │   │   ├── 📄 process-flows.png              # Business process flows
+│   │   │   │   └── 📄 integration-diagrams.png       # Integration architecture
+│   │   │   ├── 📁 videos/
+│   │   │   │   ├── 📄 demo-walkthrough.mp4           # Product demonstration
+│   │   │   │   ├── 📄 installation-tutorial.mp4      # Installation tutorial
+│   │   │   │   └── 📄 user-training.mp4              # User training videos
+│   │   │   └── 📁 api/
+│   │   │       ├── 📄 rest-api-documentation.md      # REST API docs
+│   │   │       ├── 📄 webhook-documentation.md       # Webhook documentation
+│   │   │       └── 📄 integration-examples.md        # Integration examples
+│   │   │
+│   │   └── 📁 monitoring/                            # Monitoring & logging
+│   │       ├── 📄 performance-monitoring.cls        # Performance monitoring
+│   │       ├── 📄 error-logging.cls                 # Error logging framework
+│   │       ├── 📄 audit-trail.cls                   # Audit trail implementation
+│   │       ├── 📄 metrics-collector.cls             # Metrics collection
+│   │       └── 📄 alerting-system.cls               # Alert management
+│   │
+│   ├── 📁 healthcare-data-exchange/                  # Healthcare integration platform
+│   │   ├── 📄 README.md                              # Project overview
+│   │   ├── 📄 hipaa-compliance.md                    # HIPAA compliance documentation
+│   │   ├── 📄 fhir-implementation.md                 # FHIR standard implementation
+│   │   ├── 📄 security-architecture.md               # Healthcare security model
+│   │   ├── 📄 interoperability-guide.md              # Healthcare interoperability
+│   │   │
 │   │   ├── 📁 force-app/main/default/
 │   │   │   ├── 📁 classes/
-│   │   │   │   ├── 📄 PatientManager.cls           # Patient data management
-│   │   │   │   ├── 📄 FHIRIntegration.cls          # FHIR standard integration
-│   │   │   │   ├── 📄 HL7MessageParser.cls         # HL7 message processing
-│   │   │   │   ├── 📄 ConsentManager.cls           # Patient consent tracking
-│   │   │   │   ├── 📄 AuditLogger.cls              # HIPAA audit logging
-│   │   │   │   └── 📄 DataEncryption.cls           # PHI encryption utilities
-│   │   │   ├── 📁 triggers/
+│   │   │   │   ├── 📁 controllers/
+│   │   │   │   │   ├── 📄 PatientPortalController.cls
+│   │   │   │   │   ├── 📄 ProviderDashboardController.cls
+│   │   │   │   │   ├── 📄 HealthRecordController.cls
+│   │   │   │   │   └── 📄 AppointmentController.cls
+│   │   │   │   ├── 📁 services/
+│   │   │   │   │   ├── 📄 PatientService.cls
+│   │   │   │   │   ├── 📄 HealthRecordService.cls
+│   │   │   │   │   ├── 📄 AppointmentService.cls
+│   │   │   │   │   ├── 📄 PrescriptionService.cls
+│   │   │   │   │   ├── 📄 LabResultService.cls
+│   │   │   │   │   └── 📄 ImagingService.cls
+│   │   │   │   ├── 📁 managers/
+│   │   │   │   │   ├── 📄 PatientManager.cls
+│   │   │   │   │   ├── 📄 ProviderManager.cls
+│   │   │   │   │   ├── 📄 ConsentManager.cls
+│   │   │   │   │   ├── 📄 DocumentManager.cls
+│   │   │   │   │   └── 📄 InsuranceManager.cls
+│   │   │   │   ├── 📁 processors/
+│   │   │   │   │   ├── 📄 HL7MessageProcessor.cls
+│   │   │   │   │   ├── 📄 FHIRResourceProcessor.cls
+│   │   │   │   │   ├── 📄 LabResultProcessor.cls
+│   │   │   │   │   ├── 📄 ImagingProcessor.cls
+│   │   │   │   │   └── 📄 ClaimProcessor.cls
+│   │   │   │   ├── 📁 validators/
+│   │   │   │   │   ├── 📄 PatientDataValidator.cls
+│   │   │   │   │   ├── 📄 HL7MessageValidator.cls
+│   │   │   │   │   ├── 📄 FHIRResourceValidator.cls
+│   │   │   │   │   └── 📄 ConsentValidator.cls
+│   │   │   │   ├── 📁 integrations/
+│   │   │   │   │   ├── 📄 EpicIntegration.cls
+│   │   │   │   │   ├── 📄 CernerIntegration.cls
+│   │   │   │   │   ├── 📄 AllscriptsIntegration.cls
+│   │   │   │   │   ├── 📄 LabCorpIntegration.cls
+│   │   │   │   │   ├── 📄 QuestDiagnosticsIntegration.cls
+│   │   │   │   │   └── 📄 InsuranceProviderIntegration.cls
+│   │   │   │   ├── 📁 utilities/
+│   │   │   │   │   ├── 📄 HL7Parser.cls
+│   │   │   │   │   ├── 📄 FHIRConverter.cls
+│   │   │   │   │   ├── 📄 PHIEncryptionUtils.cls
+│   │   │   │   │   ├── 📄 DateTimeUtils.cls
+│   │   │   │   │   └── 📄 ValidationUtils.cls
+│   │   │   │   ├── 📁 security/
+│   │   │   │   │   ├── 📄 PHIProtectionService.cls
+│   │   │   │   │   ├── 📄 AuditLogger.cls
+│   │   │   │   │   ├── 📄 AccessControlManager.cls
+│   │   │   │   │   ├── 📄 DataEncryption.cls
+│   │   │   │   │   └── 📄 ComplianceChecker.cls
+│   │   │   │   └── 📁 schedulers/
+│   │   │   │       ├── 📄 DataSyncScheduler.cls
+│   │   │   │       ├── 📄 ComplianceReportScheduler.cls
+│   │   │   │       ├── 📄 AuditCleanupScheduler.cls
+│   │   │   │       └── 📄 ConsentRenewalScheduler.cls
+│   │   │   │
 │   │   │   ├── 📁 lwc/
-│   │   │   │   ├── 📁 patientPortal/               # Patient portal UI
-│   │   │   │   └── 📁 providerDashboard/           # Provider dashboard
-│   │   │   └── 📁 objects/
+│   │   │   │   ├── 📁 patientPortal/
+│   │   │   │   ├── 📁 providerDashboard/
+│   │   │   │   ├── 📁 healthRecordViewer/
+│   │   │   │   ├── 📁 appointmentScheduler/
+│   │   │   │   ├── 📁 prescriptionManager/
+│   │   │   │   ├── 📁 labResultsViewer/
+│   │   │   │   └── 📁 consentManager/
+│   │   │   │
+│   │   │   ├── 📁 objects/
+│   │   │   │   ├── 📄 Patient__c.object-meta.xml
+│   │   │   │   ├── 📄 HealthRecord__c.object-meta.xml
+│   │   │   │   ├── 📄 Appointment__c.object-meta.xml
+│   │   │   │   ├── 📄 Prescription__c.object-meta.xml
+│   │   │   │   ├── 📄 LabResult__c.object-meta.xml
+│   │   │   │   ├── 📄 Consent__c.object-meta.xml
+│   │   │   │   └── 📄 AuditLog__c.object-meta.xml
+│   │   │   │
+│   │   │   └── 📁 platformEvents/
+│   │   │       ├── 📄 PatientAdmission__e.platformEvent-meta.xml
+│   │   │       ├── 📄 LabResultReceived__e.platformEvent-meta.xml
+│   │   │       ├── 📄 ConsentUpdated__e.platformEvent-meta.xml
+│   │   │       └── 📄 ComplianceAlert__e.platformEvent-meta.xml
+│   │   │
 │   │   ├── 📁 integration/
 │   │   │   ├── 📄 epic-integration.cls             # Epic EHR integration
 │   │   │   ├── 📄 cerner-integration.cls           # Cerner integration
-│   │   │   └── 📄 lab-results-sync.cls             # Lab results sync
+│   │   │   ├── 📄 lab-results-sync.cls             # Lab results sync
+│   │   │   ├── 📄 insurance-verification.cls       # Insurance verification
+│   │   │   └── 📄 pharmacy-integration.cls         # Pharmacy integration
+│   │   │
 │   │   ├── 📁 data/
+│   │   │   ├── 📄 sample-patients.json             # Sample patient data
+│   │   │   ├── 📄 sample-providers.json            # Sample provider data
+│   │   │   ├── 📄 test-health-records.json         # Test health records
+│   │   │   └── 📄 hipaa-test-scenarios.json        # HIPAA test cases
+│   │   │
 │   │   └── 📁 tests/
+│   │       ├── 📁 unit/
+│   │       ├── 📁 integration/
+│   │       ├── 📁 security/
+│   │       └── 📁 compliance/
 │   │
-│   ├── 📁 ecommerce-integration-hub/     # E-commerce platform connector
-│   │   ├── 📄 README.md
+│   ├── 📁 ecommerce-integration-hub/                 # E-commerce platform connector
+│   │   ├── 📄 README.md                              # Project overview
+│   │   ├── 📄 integration-architecture.md            # Integration architecture
+│   │   ├── 📄 supported-platforms.md                 # Supported e-commerce platforms
+│   │   ├── 📄 real-time-sync.md                      # Real-time synchronization
+│   │   │
 │   │   ├── 📁 force-app/main/default/
 │   │   │   ├── 📁 classes/
-│   │   │   │   ├── 📄 OrderSyncManager.cls         # Order synchronization
-│   │   │   │   ├── 📄 InventoryTracker.cls         # Real-time inventory
-│   │   │   │   ├── 📄 PricingEngine.cls            # Dynamic pricing
-│   │   │   │   ├── 📄 ShippingCalculator.cls       # Shipping cost calculation
-│   │   │   │   ├── 📄 TaxCalculator.cls            # Tax calculation engine
-│   │   │   │   └── 📄 RecommendationEngine.cls     # Product recommendations
-│   │   │   ├── 📁 integrations/
-│   │   │   │   ├── 📄 ShopifyConnector.cls         # Shopify integration
-│   │   │   │   ├── 📄 MagentoConnector.cls         # Magento integration
-│   │   │   │   ├── 📄 AmazonConnector.cls          # Amazon marketplace
-│   │   │   │   └── 📄 PayPalIntegration.cls        # PayPal payment processing
-│   │   │   └── 📁 lwc/
-│   │   │       ├── 📁 orderDashboard/              # Order management UI
-│   │   │       └── 📁 inventoryMonitor/            # Inventory monitoring
+│   │   │   │   ├── 📁 controllers/
+│   │   │   │   │   ├── 📄 EcommerceDashboardController.cls
+│   │   │   │   │   ├── 📄 OrderManagementController.cls
+│   │   │   │   │   ├── 📄 InventoryController.cls
+│   │   │   │   │   └── 📄 CustomerServiceController.cls
+│   │   │   │   ├── 📁 services/
+│   │   │   │   │   ├── 📄 OrderSyncService.cls
+│   │   │   │   │   ├── 📄 InventoryService.cls
+│   │   │   │   │   ├── 📄 PricingService.cls
+│   │   │   │   │   ├── 📄 ShippingService.cls
+│   │   │   │   │   ├── 📄 TaxService.cls
+│   │   │   │   │   └── 📄 RecommendationService.cls
+│   │   │   │   ├── 📁 managers/
+│   │   │   │   │   ├── 📄 ProductManager.cls
+│   │   │   │   │   ├── 📄 OrderManager.cls
+│   │   │   │   │   ├── 📄 CustomerManager.cls
+│   │   │   │   │   ├── 📄 InventoryManager.cls
+│   │   │   │   │   └── 📄 CampaignManager.cls
+│   │   │   │   ├── 📁 processors/
+│   │   │   │   │   ├── 📄 OrderProcessor.cls
+│   │   │   │   │   ├── 📄 PaymentProcessor.cls
+│   │   │   │   │   ├── 📄 FulfillmentProcessor.cls
+│   │   │   │   │   ├── 📄 RefundProcessor.cls
+│   │   │   │   │   └── 📄 AnalyticsProcessor.cls
+│   │   │   │   ├── 📁 integrations/
+│   │   │   │   │   ├── 📄 ShopifyConnector.cls
+│   │   │   │   │   ├── 📄 MagentoConnector.cls
+│   │   │   │   │   ├── 📄 WooCommerceConnector.cls
+│   │   │   │   │   ├── 📄 AmazonConnector.cls
+│   │   │   │   │   ├── 📄 eBayConnector.cls
+│   │   │   │   │   ├── 📄 EtsyConnector.cls
+│   │   │   │   │   ├── 📄 PayPalIntegration.cls
+│   │   │   │   │   ├── 📄 StripeIntegration.cls
+│   │   │   │   │   └── 📄 SquareIntegration.cls
+│   │   │   │   ├── 📁 utilities/
+│   │   │   │   │   ├── 📄 CurrencyConverter.cls
+│   │   │   │   │   ├── 📄 ShippingCalculator.cls
+│   │   │   │   │   ├── 📄 TaxCalculator.cls
+│   │   │   │   │   ├── 📄 PriceOptimizer.cls
+│   │   │   │   │   └── 📄 ReportingUtils.cls
+│   │   │   │   └── 📁 schedulers/
+│   │   │   │       ├── 📄 InventorySyncScheduler.cls
+│   │   │   │       ├── 📄 OrderSyncScheduler.cls
+│   │   │   │       ├── 📄 PricingUpdateScheduler.cls
+│   │   │   │       └── 📄 AnalyticsScheduler.cls
+│   │   │   │
+│   │   │   ├── 📁 lwc/
+│   │   │   │   ├── 📁 ecommerceDashboard/
+│   │   │   │   ├── 📁 orderManagement/
+│   │   │   │   ├── 📁 inventoryMonitor/
+│   │   │   │   ├── 📁 priceManager/
+│   │   │   │   ├── 📁 customerInsights/
+│   │   │   │   └── 📁 salesAnalytics/
+│   │   │   │
+│   │   │   └── 📁 objects/
+│   │   │       ├── 📄 EcommerceOrder__c.object-meta.xml
+│   │   │       ├── 📄 EcommerceProduct__c.object-meta.xml
+│   │   │       ├── 📄 InventoryItem__c.object-meta.xml
+│   │   │       ├── 📄 PricingRule__c.object-meta.xml
+│   │   │       └── 📄 ShippingZone__c.object-meta.xml
+│   │   │
 │   │   ├── 📁 webhooks/
-│   │   │   ├── 📄 OrderWebhook.cls                 # Order event handling
-│   │   │   └── 📄 InventoryWebhook.cls             # Inventory updates
+│   │   │   ├── 📄 OrderWebhookHandler.cls           # Order event handling
+│   │   │   ├── 📄 InventoryWebhookHandler.cls       # Inventory updates
+│   │   │   ├── 📄 CustomerWebhookHandler.cls        # Customer data sync
+│   │   │   └── 📄 PaymentWebhookHandler.cls         # Payment notifications
+│   │   │
 │   │   └── 📁 data/
+│   │       ├── 📄 sample-products.json              # Sample product data
+│   │       ├── 📄 sample-orders.json                # Sample order data
+│   │       ├── 📄 sample-customers.json             # Sample customer data
+│   │       └── 📄 integration-test-data.json        # Integration test data
 │   │
-│   ├── 📁 iot-device-management/         # IoT platform integration
-│   │   ├── 📄 README.md
+│   ├── 📁 iot-device-management/                     # IoT platform integration
+│   │   ├── 📄 README.md                              # Project overview
+│   │   ├── 📄 iot-architecture.md                    # IoT system architecture
+│   │   ├── 📄 device-protocols.md                    # Supported protocols
+│   │   ├── 📄 analytics-framework.md                 # Analytics and ML framework
+│   │   │
 │   │   ├── 📁 force-app/main/default/
 │   │   │   ├── 📁 classes/
-│   │   │   │   ├── 📄 DeviceManager.cls            # IoT device management
-│   │   │   │   ├── 📄 SensorDataProcessor.cls      # Sensor data processing
-│   │   │   │   ├── 📄 AlertManager.cls             # Alert and notification
-│   │   │   │   ├── 📄 ThresholdMonitor.cls         # Threshold monitoring
-│   │   │   │   └── 📄 PredictiveAnalytics.cls      # ML-based predictions
-│   │   │   ├── 📁 platformEvents/
-│   │   │   │   ├── 📄 DeviceStatus__e.object        # Device status events
-│   │   │   │   └── 📄 SensorReading__e.object       # Sensor reading events
-│   │   │   └── 📁 lwc/
-│   │   │       ├── 📁 deviceDashboard/             # Device monitoring UI
-│   │   │       └── 📁 analyticsCharts/             # Data visualization
+│   │   │   │   ├── 📁 controllers/
+│   │   │   │   │   ├── 📄 DeviceDashboardController.cls
+│   │   │   │   │   ├── 📄 SensorDataController.cls
+│   │   │   │   │   ├── 📄 AlertController.cls
+│   │   │   │   │   └── 📄 AnalyticsController.cls
+│   │   │   │   ├── 📁 services/
+│   │   │   │   │   ├── 📄 DeviceService.cls
+│   │   │   │   │   ├── 📄 SensorDataService.cls
+│   │   │   │   │   ├── 📄 AlertService.cls
+│   │   │   │   │   ├── 📄 PredictiveAnalyticsService.cls
+│   │   │   │   │   └── 📄 MaintenanceService.cls
+│   │   │   │   ├── 📁 managers/
+│   │   │   │   │   ├── 📄 DeviceManager.cls
+│   │   │   │   │   ├── 📄 SensorManager.cls
+│   │   │   │   │   ├── 📄 ThresholdManager.cls
+│   │   │   │   │   ├── 📄 AlertManager.cls
+│   │   │   │   │   └── 📄 ConfigurationManager.cls
+│   │   │   │   ├── 📁 processors/
+│   │   │   │   │   ├── 📄 SensorDataProcessor.cls
+│   │   │   │   │   ├── 📄 AnomalyDetectionProcessor.cls
+│   │   │   │   │   ├── 📄 PredictiveMaintenanceProcessor.cls
+│   │   │   │   │   └── 📄 EnergyOptimizationProcessor.cls
+│   │   │   │   ├── 📁 integrations/
+│   │   │   │   │   ├── 📄 MQTTIntegration.cls
+│   │   │   │   │   ├── 📄 CoAPIntegration.cls
+│   │   │   │   │   ├── 📄 AWSIoTIntegration.cls
+│   │   │   │   │   ├── 📄 AzureIoTIntegration.cls
+│   │   │   │   │   └── 📄 GoogleCloudIoTIntegration.cls
+│   │   │   │   ├── 📁 utilities/
+│   │   │   │   │   ├── 📄 ProtocolUtils.cls
+│   │   │   │   │   ├── 📄 DataCompressionUtils.cls
+│   │   │   │   │   ├── 📄 EncryptionUtils.cls
+│   │   │   │   │   └── 📄 TimeSeriesUtils.cls
+│   │   │   │   └── 📁 ml/
+│   │   │   │       ├── 📄 AnomalyDetector.cls
+│   │   │   │       ├── 📄 PredictiveModel.cls
+│   │   │   │       ├── 📄 PatternRecognition.cls
+│   │   │   │       └── 📄 OptimizationAlgorithm.cls
+│   │   │   │
+│   │   │   ├── 📁 lwc/
+│   │   │   │   ├── 📁 deviceDashboard/
+│   │   │   │   ├── 📁 sensorDataViewer/
+│   │   │   │   ├── 📁 alertCenter/
+│   │   │   │   ├── 📁 analyticsCharts/
+│   │   │   │   ├── 📁 deviceConfiguration/
+│   │   │   │   └── 📁 maintenanceScheduler/
+│   │   │   │
+│   │   │   ├── 📁 objects/
+│   │   │   │   ├── 📄 IoTDevice__c.object-meta.xml
+│   │   │   │   ├── 📄 SensorReading__c.object-meta.xml
+│   │   │   │   ├── 📄 DeviceAlert__c.object-meta.xml
+│   │   │   │   ├── 📄 MaintenanceRecord__c.object-meta.xml
+│   │   │   │   └── 📄 DeviceConfiguration__c.object-meta.xml
+│   │   │   │
+│   │   │   └── 📁 platformEvents/
+│   │   │       ├── 📄 DeviceStatus__e.platformEvent-meta.xml
+│   │   │       ├── 📄 SensorReading__e.platformEvent-meta.xml
+│   │   │       ├── 📄 DeviceAlert__e.platformEvent-meta.xml
+│   │   │       └── 📄 MaintenanceRequired__e.platformEvent-meta.xml
+│   │   │
 │   │   └── 📁 mqtt-integration/
-│   │       └── 📄 MQTTConnector.cls                # MQTT protocol handler
+│   │       ├── 📄 MQTTConnector.cls                # MQTT protocol handler
+│   │       ├── 📄 MessageBroker.cls                # Message broker integration
+│   │       ├── 📄 TopicManager.cls                 # MQTT topic management
+│   │       └── 📄 SecurityManager.cls              # MQTT security
 │   │
-│   └── 📁 supply-chain-optimizer/        # Supply chain management
-│       ├── 📄 README.md
+│   ├── 📁 supply-chain-optimizer/                    # Supply chain management
+│   │   ├── 📄 README.md                              # Project overview
+│   │   ├── 📄 optimization-algorithms.md             # Optimization algorithms
+│   │   ├── 📄 supplier-integration.md                # Supplier integration guide
+│   │   ├── 📄 demand-forecasting.md                  # Forecasting methodologies
+│   │   │
+│   │   ├── 📁 force-app/main/default/
+│   │   │   ├── 📁 classes/
+│   │   │   │   ├── 📁 controllers/
+│   │   │   │   │   ├── 📄 SupplyChainController.cls
+│   │   │   │   │   ├── 📄 SupplierPortalController.cls
+│   │   │   │   │   ├── 📄 DemandPlanningController.cls
+│   │   │   │   │   └── 📄 QualityController.cls
+│   │   │   │   ├── 📁 services/
+│   │   │   │   │   ├── 📄 SupplierService.cls
+│   │   │   │   │   ├── 📄 InventoryService.cls
+│   │   │   │   │   ├── 📄 DemandForecastingService.cls
+│   │   │   │   │   ├── 📄 OptimizationService.cls
+│   │   │   │   │   └── 📄 QualityAssuranceService.cls
+│   │   │   │   ├── 📁 managers/
+│   │   │   │   │   ├── 📄 SupplierManager.cls
+│   │   │   │   │   ├── 📄 ProcurementManager.cls
+│   │   │   │   │   ├── 📄 LogisticsManager.cls
+│   │   │   │   │   └── 📄 ComplianceManager.cls
+│   │   │   │   ├── 📁 processors/
+│   │   │   │   │   ├── 📄 DemandForecaster.cls
+│   │   │   │   │   ├── 📄 OptimizationEngine.cls
+│   │   │   │   │   ├── 📄 RiskAssessmentProcessor.cls
+│   │   │   │   │   └── 📄 PerformanceAnalyzer.cls
+│   │   │   │   ├── 📁 integrations/
+│   │   │   │   │   ├── 📄 SAPIntegration.cls
+│   │   │   │   │   ├── 📄 OracleConnector.cls
+│   │   │   │   │   ├── 📄 ERPIntegration.cls
+│   │   │   │   │   └── 📄 LogisticsProviderIntegration.cls
+│   │   │   │   └── 📁 algorithms/
+│   │   │   │       ├── 📄 LinearProgramming.cls
+│   │   │   │       ├── 📄 NetworkOptimization.cls
+│   │   │   │       ├── 📄 InventoryOptimization.cls
+│   │   │   │       └── 📄 RouteOptimization.cls
+│   │   │   │
+│   │   │   └── 📁 objects/
+│   │   │       ├── 📄 Supplier__c.object-meta.xml
+│   │   │       ├── 📄 SupplyChainItem__c.object-meta.xml
+│   │   │       ├── 📄 DemandForecast__c.object-meta.xml
+│   │   │       ├── 📄 QualityMetric__c.object-meta.xml
+│   │   │       └── 📄 ComplianceRecord__c.object-meta.xml
+│   │   │
+│   │   └── 📁 analytics/
+│   │       ├── 📄 SupplyChainMetrics.cls           # KPI calculations
+│   │       ├── 📄 PerformanceDashboard.cls        # Performance tracking
+│   │       ├── 📄 RiskAnalytics.cls               # Risk analysis
+│   │       └── 📄 PredictiveModels.cls            # Predictive analytics
+│   │
+│   ├── 📁 digital-marketing-automation/              # Marketing automation platform
+│   │   ├── 📄 README.md                              # Project overview
+│   │   ├── 📄 marketing-automation.md                # Automation workflows
+│   │   ├── 📄 personalization-engine.md              # Personalization framework
+│   │   │
+│   │   ├── 📁 force-app/main/default/
+│   │   │   ├── 📁 classes/
+│   │   │   │   ├── 📁 services/
+│   │   │   │   │   ├── 📄 CampaignService.cls
+│   │   │   │   │   ├── 📄 LeadScoringService.cls
+│   │   │   │   │   ├── 📄 PersonalizationService.cls
+│   │   │   │   │   ├── 📄 EmailMarketingService.cls
+│   │   │   │   │   └── 📄 SocialMediaService.cls
+│   │   │   │   ├── 📁 integrations/
+│   │   │   │   │   ├── 📄 MailChimpIntegration.cls
+│   │   │   │   │   ├── 📄 HubSpotIntegration.cls
+│   │   │   │   │   ├── 📄 MarketoIntegration.cls
+│   │   │   │   │   ├── 📄 GoogleAnalyticsIntegration.cls
+│   │   │   │   │   └── 📄 FacebookAdsIntegration.cls
+│   │   │   │   └── 📁 algorithms/
+│   │   │   │       ├── 📄 RecommendationEngine.cls
+│   │   │   │       ├── 📄 SentimentAnalysis.cls
+│   │   │   │       ├── 📄 ChurnPrediction.cls
+│   │   │   │       └── 📄 LifetimeValueCalculator.cls
+│   │   │   │
+│   │   │   └── 📁 objects/
+│   │   │       ├── 📄 MarketingCampaign__c.object-meta.xml
+│   │   │       ├── 📄 LeadScore__c.object-meta.xml
+│   │   │       ├── 📄 CustomerSegment__c.object-meta.xml
+│   │   │       └── 📄 MarketingMetric__c.object-meta.xml
+│   │   │
+│   │   └── 📁 templates/
+│   │       ├── 📁 email-templates/
+│   │       ├── 📁 landing-pages/
+│   │       └── 📁 social-media/
+│   │
+│   ├── 📁 hr-management-system/                      # Human resources management
+│   │   ├── 📄 README.md                              # Project overview
+│   │   ├── 📄 employee-lifecycle.md                  # Employee lifecycle management
+│   │   ├── 📄 performance-management.md               # Performance tracking
+│   │   │
+│   │   ├── 📁 force-app/main/default/
+│   │   │   ├── 📁 classes/
+│   │   │   │   ├── 📁 services/
+│   │   │   │   │   ├── 📄 EmployeeService.cls
+│   │   │   │   │   ├── 📄 RecruitmentService.cls
+│   │   │   │   │   ├── 📄 PerformanceService.cls
+│   │   │   │   │   ├── 📄 PayrollService.cls
+│   │   │   │   │   └── 📄 BenefitsService.cls
+│   │   │   │   ├── 📁 integrations/
+│   │   │   │   │   ├── 📄 WorkdayIntegration.cls
+│   │   │   │   │   ├── 📄 ADPIntegration.cls
+│   │   │   │   │   ├── 📄 LinkedInIntegration.cls
+│   │   │   │   │   └── 📄 SlackIntegration.cls
+│   │   │   │   └── 📁 utilities/
+│   │   │   │       ├── 📄 PayrollCalculator.cls
+│   │   │   │       ├── 📄 PerformanceMetrics.cls
+│   │   │   │       ├── 📄 ComplianceChecker.cls
+│   │   │   │       └── 📄 ReportingUtils.cls
+│   │   │   │
+│   │   │   └── 📁 objects/
+│   │   │       ├── 📄 Employee__c.object-meta.xml
+│   │   │       ├── 📄 Position__c.object-meta.xml
+│   │   │       ├── 📄 PerformanceReview__c.object-meta.xml
+│   │   │       ├── 📄 TimeOff__c.object-meta.xml
+│   │   │       └── 📄 Benefits__c.object-meta.xml
+│   │   │
+│   │   └── 📁 workflows/
+│   │       ├── 📁 onboarding/
+│   │       ├── 📁 performance-review/
+│   │       ├── 📁 offboarding/
+│   │       └── 📁 compliance/
+│   │
+│   ├── 📁 real-estate-management/                    # Real estate CRM and management
+│   │   ├── 📄 README.md                              # Project overview
+│   │   ├── 📄 property-management.md                 # Property management features
+│   │   ├── 📄 crm-integration.md                     # CRM integration guide
+│   │   │
+│   │   ├── 📁 force-app/main/default/
+│   │   │   ├── 📁 classes/
+│   │   │   │   ├── 📁 services/
+│   │   │   │   │   ├── 📄 PropertyService.cls
+│   │   │   │   │   ├── 📄 LeadManagementService.cls
+│   │   │   │   │   ├── 📄 ValuationService.cls
+│   │   │   │   │   ├── 📄 RentalService.cls
+│   │   │   │   │   └── 📄 MaintenanceService.cls
+│   │   │   │   ├── 📁 integrations/
+│   │   │   │   │   ├── 📄 MLSIntegration.cls
+│   │   │   │   │   ├── 📄 ZillowIntegration.cls
+│   │   │   │   │   ├── 📄 DocuSignIntegration.cls
+│   │   │   │   │   └── 📄 GoogleMapsIntegration.cls
+│   │   │   │   └── 📁 calculators/
+│   │   │   │       ├── 📄 MortgageCalculator.cls
+│   │   │   │       ├── 📄 ROICalculator.cls
+│   │   │   │       ├── 📄 PropertyValuation.cls
+│   │   │   │       └── 📄 RentalYieldCalculator.cls
+│   │   │   │
+│   │   │   └── 📁 objects/
+│   │   │       ├── 📄 Property__c.object-meta.xml
+│   │   │       ├── 📄 Listing__c.object-meta.xml
+│   │   │       ├── 📄 PropertyInquiry__c.object-meta.xml
+│   │   │       ├── 📄 MaintenanceRequest__c.object-meta.xml
+│   │   │       └── 📄 PropertyValuation__c.object-meta.xml
+│   │   │
+│   │   └── 📁 mobile-apps/
+│   │       ├── 📁 property-search-app/
+│   │       ├── 📁 agent-mobile-crm/
+│   │       └── 📁 property-management-app/
+│   │
+│   ├── 📁 nonprofit-fundraising-platform/            # Nonprofit and fundraising CRM
+│   │   ├── 📄 README.md                              # Project overview
+│   │   ├── 📄 fundraising-strategies.md              # Fundraising methodologies
+│   │   ├── 📄 donor-management.md                    # Donor relationship management
+│   │   │
+│   │   ├── 📁 force-app/main/default/
+│   │   │   ├── 📁 classes/
+│   │   │   │   ├── 📁 services/
+│   │   │   │   │   ├── 📄 DonorService.cls
+│   │   │   │   │   ├── 📄 CampaignService.cls
+│   │   │   │   │   ├── 📄 VolunteerService.cls
+│   │   │   │   │   ├── 📄 GrantService.cls
+│   │   │   │   │   └── 📄 EventService.cls
+│   │   │   │   ├── 📁 integrations/
+│   │   │   │   │   ├── 📄 PayPalGivingIntegration.cls
+│   │   │   │   │   ├── 📄 JustGivingIntegration.cls
+│   │   │   │   │   ├── 📄 MailChimpIntegration.cls
+│   │   │   │   │   └── 📄 EventbriteIntegration.cls
+│   │   │   │   └── 📁 analytics/
+│   │   │   │       ├── 📄 DonorAnalytics.cls
+│   │   │   │       ├── 📄 CampaignAnalytics.cls
+│   │   │   │       ├── 📄 RetentionAnalysis.cls
+│   │   │   │       └── 📄 ImpactMeasurement.cls
+│   │   │   │
+│   │   │   └── 📁 objects/
+│   │   │       ├── 📄 Donor__c.object-meta.xml
+│   │   │       ├── 📄 Donation__c.object-meta.xml
+│   │   │       ├── 📄 FundraisingCampaign__c.object-meta.xml
+│   │   │       ├── 📄 Grant__c.object-meta.xml
+│   │   │       └── 📄 Volunteer__c.object-meta.xml
+│   │   │
+│   │   └── 📁 reporting/
+│   │       ├── 📁 impact-reports/
+│   │       ├── 📁 donor-reports/
+│   │       ├── 📁 campaign-analytics/
+│   │       └── 📁 financial-reports/
+│   │
+│   └── 📁 education-management-system/               # Educational institution management
+│       ├── 📄 README.md                              # Project overview
+│       ├── 📄 student-lifecycle.md                   # Student lifecycle management
+│       ├── 📄 learning-management.md                 # LMS integration
+│       │
 │       ├── 📁 force-app/main/default/
 │       │   ├── 📁 classes/
-│       │   │   ├── 📄 SupplierManager.cls          # Supplier relationship mgmt
-│       │   │   ├── 📄 DemandForecaster.cls         # Demand forecasting
-│       │   │   ├── 📄 OptimizationEngine.cls       # Supply chain optimization
-│       │   │   ├── 📄 QualityAssurance.cls         # Quality control
-│       │   │   └── 📄 ComplianceTracker.cls        # Regulatory compliance
-│       │   └── 📁 integrations/
-│       │       ├── 📄 SAPIntegration.cls           # SAP ERP integration
-│       │       └── 📄 OracleConnector.cls          # Oracle database connector
-│       └── 📁 analytics/
-│           └── 📄 SupplyChainMetrics.cls           # KPI calculations
-│
-├── 📁 learning-path/                     # Structured learning roadmap
-│   ├── 📁 phase-1-fundamentals/
-│   │   ├── 📁 level-01-apex-basics/
-│   │   │   ├── 📄 README.md              # Learning objectives & overview
-│   │   │   ├── 📄 theory.md              # Theoretical concepts
-│   │   │   ├── 📄 exercises.cls          # Hands-on practice problems
-│   │   │   ├── 📄 solutions.cls          # Detailed solutions with explanations
-│   │   │   ├── 📄 quiz.md                # Knowledge assessment
-│   │   │   └── 📁 resources/
-│   │   │       ├── 📄 code-examples.cls  # Additional code samples
-│   │   │       ├── 📄 cheat-sheet.pdf    # Quick reference
-│   │   │       └── 📄 video-links.md     # Related video tutorials
-│   │   ├── 📁 level-02-data-types/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 primitive-types.cls    # Primitive data types
-│   │   │   ├── 📄 collections.cls        # Lists, Sets, Maps
-│   │   │   ├── 📄 sobjects.cls           # SObject manipulation
-│   │   │   └── 📄 exercises.cls
-│   │   ├── 📁 level-03-control-flow/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 conditionals.cls       # If-else statements
-│   │   │   ├── 📄 loops.cls              # For/while loops
-│   │   │   ├── 📄 exception-handling.cls # Try-catch blocks
-│   │   │   └── 📄 exercises.cls
-│   │   ├── 📁 level-04-methods-classes/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 method-fundamentals.cls # Method creation & overloading
-│   │   │   ├── 📄 class-structure.cls     # Class design patterns
-│   │   │   ├── 📄 access-modifiers.cls    # Public, private, protected
-│   │   │   └── 📄 exercises.cls
-│   │   └── 📁 level-05-soql-sosl/
-│   │       ├── 📄 README.md
-│   │       ├── 📄 soql-fundamentals.cls   # Basic SOQL queries
-│   │       ├── 📄 soql-advanced.cls       # Complex queries & aggregates
-│   │       ├── 📄 sosl-search.cls         # Full-text search
-│   │       ├── 📄 dynamic-queries.cls     # Dynamic SOQL/SOSL
-│   │       └── 📄 exercises.cls
-│   │
-│   ├── 📁 phase-2-intermediate/
-│   │   ├── 📁 level-06-dml-operations/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 basic-dml.cls          # Insert, Update, Delete
-│   │   │   ├── 📄 bulk-operations.cls     # Bulk DML patterns
-│   │   │   ├── 📄 database-methods.cls    # Database.insert, etc.
-│   │   │   ├── 📄 transaction-control.cls # Savepoints & rollbacks
-│   │   │   └── 📄 exercises.cls
-│   │   ├── 📁 level-07-triggers/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 trigger-basics.cls     # Trigger fundamentals
-│   │   │   ├── 📄 trigger-patterns.cls   # Best practice patterns
-│   │   │   ├── 📄 handler-framework.cls  # Trigger handler framework
-│   │   │   ├── 📄 recursive-prevention.cls # Preventing recursion
-│   │   │   └── 📄 exercises/
-│   │   │       ├── 📄 AccountTrigger.trigger
-│   │   │       ├── 📄 ContactTrigger.trigger
-│   │   │       └── 📄 OpportunityTrigger.trigger
-│   │   ├── 📁 level-08-testing/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 test-fundamentals.cls  # Test class basics
-│   │   │   ├── 📄 test-data-setup.cls    # Test data creation
-│   │   │   ├── 📄 assertions.cls         # System.assert methods
-│   │   │   ├── 📄 test-utilities.cls     # Reusable test utilities
-│   │   │   ├── 📄 mock-framework.cls     # Mocking strategies
-│   │   │   └── 📄 exercises.cls
-│   │   ├── 📁 level-09-governor-limits/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 understanding-limits.cls # Governor limit concepts
-│   │   │   ├── 📄 bulkification.cls       # Bulk processing patterns
-│   │   │   ├── 📄 optimization.cls        # Performance optimization
-│   │   │   ├── 📄 monitoring.cls          # Limit monitoring
-│   │   │   └── 📄 exercises.cls
-│   │   └── 📁 level-10-security/
-│   │       ├── 📄 README.md
-│   │       ├── 📄 sharing-rules.cls      # Programmatic sharing
-│   │       ├── 📄 field-level-security.cls # FLS implementation
-│   │       ├── 📄 crud-checks.cls        # CRUD permissions
-│   │       ├── 📄 security-scanner.cls   # Security best practices
-│   │       └── 📄 exercises.cls
-│   │
-│   ├── 📁 phase-3-advanced/
-│   │   ├── 📁 level-11-async-processing/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 future-methods.cls     # @future annotations
-│   │   │   ├── 📄 batch-apex.cls         # Batch processing
-│   │   │   ├── 📄 queueable-apex.cls     # Queueable interface
-│   │   │   ├── 📄 schedulable-apex.cls   # Scheduled jobs
-│   │   │   └── 📄 exercises/
-│   │   │       ├── 📄 DataCleanupBatch.cls
-│   │   │       ├── 📄 EmailProcessor.cls
-│   │   │       └── 📄 ReportGenerator.cls
-│   │   ├── 📁 level-12-web-services/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 rest-services.cls      # REST API development
-│   │   │   ├── 📄 soap-services.cls      # SOAP web services
-│   │   │   ├── 📄 http-callouts.cls      # External API calls
-│   │   │   ├── 📄 authentication.cls     # OAuth & API security
-│   │   │   └── 📄 exercises/
-│   │   │       ├── 📄 WeatherService.cls
-│   │   │       ├── 📄 PaymentGateway.cls
-│   │   │       └── 📄 CRMIntegration.cls
-│   │   ├── 📁 level-13-platform-events/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 event-basics.cls       # Platform event fundamentals
-│   │   │   ├── 📄 event-publishing.cls   # Publishing events
-│   │   │   ├── 📄 event-subscribers.cls  # Event subscription
-│   │   │   ├── 📄 change-events.cls      # Change data capture
-│   │   │   └── 📄 exercises.cls
-│   │   ├── 📁 level-14-lightning-platform/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 aura-controllers.cls   # Aura component controllers
-│   │   │   ├── 📄 lwc-apex.cls           # LWC Apex integration
-│   │   │   ├── 📄 custom-metadata.cls    # Custom metadata types
-│   │   │   ├── 📄 platform-cache.cls     # Platform cache usage
-│   │   │   └── 📄 exercises/
-│   │   └── 📁 level-15-advanced-patterns/
-│   │       ├── 📄 README.md
-│   │       ├── 📄 design-patterns.cls    # Common design patterns
-│   │       ├── 📄 selector-pattern.cls   # Data access patterns
-│   │       ├── 📄 service-layer.cls      # Service layer architecture
-│   │       ├── 📄 factory-pattern.cls    # Factory pattern implementation
-│   │       └── 📄 exercises.cls
-│   │
-│   ├── 📁 phase-4-enterprise/
-│   │   ├── 📁 level-16-integration-patterns/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 middleware-patterns.cls # Enterprise integration patterns
-│   │   │   ├── 📄 etl-processes.cls      # Extract, Transform, Load
-│   │   │   ├── 📄 real-time-sync.cls     # Real-time data synchronization
-│   │   │   ├── 📄 error-handling.cls     # Robust error handling
-│   │   │   └── 📄 exercises.cls
-│   │   ├── 📁 level-17-large-data-volumes/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 big-objects.cls        # Big Object implementation
-│   │   │   ├── 📄 bulk-api-2.cls         # Bulk API 2.0 usage
-│   │   │   ├── 📄 streaming-data.cls     # Streaming API patterns
-│   │   │   ├── 📄 archival-strategies.cls # Data archival patterns
-│   │   │   └── 📄 exercises.cls
-│   │   ├── 📁 level-18-performance-tuning/
-│   │   │   ├── 📄 README.md
-│   │   │   ├── 📄 query-optimization.cls # SOQL optimization
-│   │   │   ├── 📄 memory-management.cls  # Memory usage patterns
-│   │   │   ├── 📄 cpu-optimization.cls   # CPU time optimization
-│   │   │   ├── 📄 profiling-tools.cls    # Performance profiling
-│   │   │   └── 📄 exercises.cls
-│   │   └── 📁 level-19-devops-ci-cd/
-│   │       ├── 📄 README.md
-│   │       ├── 📄 version-control.cls    # Git workflows for Salesforce
-│   │       ├── 📄 automated-testing.cls  # CI/CD pipeline integration
-│   │       ├── 📄 deployment-automation.cls # Automated deployments
-│   │       ├── 📄 monitoring-logging.cls # Production monitoring
-│   │       └── 📄 exercises/
-│   │
-│   └── 📁 phase-5-expert/
-│       ├── 📁 level-20-architecture-patterns/
-│       │   ├── 📄 README.md
-│       │   ├── 📄 enterprise-architecture.cls # Large-scale architecture
-│       │   ├── 📄 microservices.cls      # Microservices patterns
-│       │   ├── 📄 event-driven.cls       # Event-driven architecture
-│       │   ├── 📄 domain-driven.cls      # Domain-driven design
-│       │   └── 📄 exercises.cls
-│       ├── 📁 level-21-advanced-security/
-│       │   ├── 📄 README.md
-│       │   ├── 📄 encryption-patterns.cls # Data encryption strategies
-│       │   ├── 📄 audit-trails.cls       # Comprehensive audit logging
-│       │   ├── 📄 privacy-compliance.cls # GDPR/CCPA compliance
-│       │   ├── 📄 threat-modeling.cls    # Security threat analysis
-│       │   └── 📄 exercises.cls
-│       ├── 📁 level-22-machine-learning/
-│       │   ├── 📄 README.md
-│       │   ├── 📄 einstein-platform.cls # Einstein Platform Services
-│       │   ├── 📄 predictive-models.cls  # Predictive analytics
-│       │   ├── 📄 sentiment-analysis.cls # Text analysis integration
-│       │   ├── 📄 recommendation-engine.cls # ML recommendations
-│       │   └── 📄 exercises.cls
-│       └── 📁 level-23-thought-leadership/
-│           ├── 📄 README.md
-│           ├── 📄 innovation-patterns.cls # Cutting-edge implementations
-│           ├── 📄 research-projects.cls  # Experimental features
-│           ├── 📄 community-contributions.cls # Open source contributions
-│           ├── 📄 technical-writing.cls # Documentation standards
-│           └── 📄 exercises.cls
-│
-├── 📁 lib/                              # Reusable utility libraries
-│   ├── 📁 apex-utilities/
-│   │   ├── 📄 README.md
-│   │   ├── 📄 StringUtils.cls            # String manipulation utilities
-│   │   ├── 📄 DateTimeUtils.cls          # Date/time processing helpers
-│   │   ├── 📄 CollectionUtils.cls        # List/Set/Map utilities
-│   │   ├── 📄 MathUtils.cls              # Mathematical calculations
-│   │   ├── 📄 ValidationUtils.cls        # Input validation helpers
-│   │   ├── 📄 CryptoUtils.cls            # Encryption/hashing utilities
-│   │   ├── 📄 JSONUtils.cls              # JSON processing helpers
-│   │   ├── 📄 CSVUtils.cls               # CSV file processing
-│   │   └── 📄 EmailUtils.cls             # Email formatting utilities
-│   │
-│   ├── 📁 trigger-framework/
-│   │   ├── 📄 README.md
-│   │   ├── 📄 TriggerHandler.cls         # Base trigger handler class
-│   │   ├── 📄 TriggerContext.cls         # Trigger context wrapper
-│   │   ├── 📄 TriggerDispatcher.cls      # Trigger routing logic
-│   │   ├── 📄 TriggerSettings.cls        # Trigger configuration
-│   │   └── 📄 RecursionPrevention.cls    # Recursion control
-│   │
-│   ├── 📁 testing-utilities/
-│   │   ├── 📄 README.md
-│   │   ├── 📄 TestDataFactory.cls        # Comprehensive test data factory
-│   │   ├── 📄 TestObjectBuilder.cls      # Builder pattern for test data
-│   │   ├── 📄 MockHTTPResponse.cls       # HTTP callout mocking
-│   │   ├── 📄 DatabaseMocking.cls        # Database operation mocking
-│   │   ├── 📄 AssertionUtils.cls         # Custom assertion helpers
-│   │   ├── 📄 PerformanceTestUtils.cls   # Performance testing tools
-│   │   └── 📄 TestEnvironmentSetup.cls   # Test environment configuration
-│   │
-│   ├── 📁 security-framework/
-│   │   ├── 📄 README.md
-│   │   ├── 📄 SecurityUtils.cls          # Security validation utilities
-│   │   ├── 📄 SharingUtils.cls           # Programmatic sharing helpers
-│   │   ├── 📄 FieldSecurityChecker.cls   # FLS validation
-│   │   ├── 📄 CRUDSecurityChecker.cls    # CRUD permission validation
-│   │   ├── 📄 DataSanitizer.cls          # Input sanitization
-│   │   └── 📄 AuditLogger.cls            # Security audit logging
-│   │
-│   ├── 📁 integration-framework/
-│   │   ├── 📄 README.md
-│   │   ├── 📄 HTTPCalloutManager.cls     # HTTP request management
-│   │   ├── 📄 RetryMechanism.cls         # Automatic retry logic
-│   │   ├── 📄 RateLimitManager.cls       # API rate limiting
-│   │   ├── 📄 CircuitBreaker.cls         # Circuit breaker pattern
-│   │   ├── 📄 APIResponseParser.cls      # Response parsing utilities
-│   │   ├── 📄 WebhookProcessor.cls       # Webhook handling framework
-│   │   └── 📄 QueueManager.cls           # Async processing queue
-│   │
-│   ├──
+│       │   │   ├── 📁 services/
+│       │   │   │   ├── 📄 StudentService.cls
+│       │   │   │   ├── 📄 AdmissionsService.cls
+│       │   │   │   ├── 📄 AcademicService.cls
+│       │   │   │   ├── 📄 FinancialAidService.cls
+│       │   │   │   └── 📄 AlumniService.cls
+│       │   │   ├── 📁 integrations/
+│       │   │   │   ├── 📄 CanvasIntegration.cls
+│       │   │   │   ├── 📄 BlackboardIntegration.cls
+│       │   │   │   ├── 📄 SISIntegration.cls
+│       │   │   │   └── 📄 LibrarySystemIntegration.cls
+│       │   │   └── 📁 analytics/
+│       │   │       ├── 📄 StudentAnalytics.cls
+│       │   │       ├── 📄 AcademicPerformance.cls
+│       │   │       ├── 📄 RetentionAnalysis.cls
+│       │   │       └── 📄 OutcomeTracking.cls
+│       │   │
+│       │   └── 📁 objects/
+│       │       ├── 📄 Student__c.object-meta.xml
+│       │       ├── 📄 Application__c.object-meta.xml
+│       │       ├── 📄 Course__c.object-meta.xml
+│       │       ├── 📄 Grade__c.object-meta.xml
+│       │       └── 📄 FinancialAid__c.object-meta.xml
+│       │
+│       └── 📁 portals/
+│           ├── 📁 student-portal/
+│           ├── 📁 faculty-portal/
+│           ├── 📁 admin-portal/
+│           └── 📁 parent-portal/
