@@ -426,7 +426,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **⭐ Star this repository to track your Salesforce mastery journey! ⭐**
 
 *Created by **Ilyasse Younes** for the Salesforce developer community*
-
+<p align="center"> <img src="https://img.icons8.com/color/96/000000/salesforce.png" alt="Salesforce"/>
 </div>
 
 # Salesforce Apex Showcase - Full Project Structure 
