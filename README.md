@@ -1,4 +1,4 @@
-# ⚡ Salesforce Apex & Integration Showcase
+#  Salesforce Apex & Integration
 
 <div align="center">
 
@@ -10,36 +10,34 @@
 [![Code Coverage](https://img.shields.io/badge/Code%20Coverage-95%2B%25-success?style=for-the-badge&logo=codecov&logoColor=white)](#-testing-excellence)
 [![Trailhead](https://img.shields.io/badge/Trailhead-Ranger-FF6B35?style=for-the-badge&logo=salesforce&logoColor=white)](#-certifications--achievements)
 
-**🎯 Master Salesforce Development | Build Scalable Solutions | Showcase Enterprise-Grade Code**
 
-[🚀 Quick Start](#-quick-start) • [📚 Learning Path](#-development-roadmap) • [🏗️ Projects](#-featured-solutions) • [🔗 Integrations](#-api-integration-mastery)
+
 
 </div>
 
 ---
 
-## 🎯 What You'll Master
 
 <table>
 <tr>
 <td align="center" width="25%">
 <img src="https://img.icons8.com/color/96/000000/code.png" alt="Apex Development"/><br/>
-<strong>⚡ Apex Mastery</strong><br/>
+<strong> Apex Mastery</strong><br/>
 Advanced triggers, async processing, bulk operations, and performance optimization
 </td>
 <td align="center" width="25%">
 <img src="https://img.icons8.com/color/96/000000/api.png" alt="API Integration"/><br/>
-<strong>🔗 API Integration</strong><br/>
+<strong> API Integration</strong><br/>
 REST, GraphQL, Bulk API 2.0, Streaming API, and real-time data synchronization
 </td>
 <td align="center" width="25%">
 <img src="https://img.icons8.com/color/96/000000/lightning-bolt.png" alt="Lightning Development"/><br/>
-<strong>⚡ Lightning UI</strong><br/>
+<strong> Lightning UI</strong><br/>
 LWC, Aura Components, data binding, and modern user interface development
 </td>
 <td align="center" width="25%">
 <img src="https://img.icons8.com/color/96/000000/test-tube.png" alt="Testing"/><br/>
-<strong>🧪 Testing Excellence</strong><br/>
+<strong> Testing Excellence</strong><br/>
 Unit testing, mocking, test data factories, and achieving 95%+ code coverage
 </td>
 </tr>
@@ -97,7 +95,7 @@ salesforce-apex-showcase/
 <details>
 <summary><strong>🌱 Phase 1: Apex Fundamentals (Weeks 1-3)</strong></summary>
 
-| Week | 🎯 Focus | ⚡ Skills | 📋 Deliverables |
+| Week |   Focus |   Skills |   Deliverables |
 |------|----------|-----------|------------------|
 | 1 | Data Types & Collections | Lists, Sets, Maps, primitive types | Collection manipulation examples |
 | 2 | SOQL & SOSL Mastery | Query optimization, relationship queries | Advanced query patterns |
@@ -106,9 +104,9 @@ salesforce-apex-showcase/
 </details>
 
 <details>
-<summary><strong>🔥 Phase 2: Advanced Apex (Weeks 4-8)</strong></summary>
+<summary><strong>  Phase 2: Advanced Apex (Weeks 4-8)</strong></summary>
 
-| Week | 🎯 Focus | ⚡ Skills | 📋 Deliverables |
+| Week |   Focus |   Skills |   Deliverables |
 |------|----------|-----------|------------------|
 | 4 | Trigger Architecture | Handler patterns, recursion control | Production-ready trigger framework |
 | 5 | Async Processing | @future, Queueable, Batchable | Long-running process implementations |
@@ -121,7 +119,7 @@ salesforce-apex-showcase/
 <details>
 <summary><strong>🔗 Phase 3: API Integration Mastery (Weeks 9-14)</strong></summary>
 
-| Week | 🎯 Focus | ⚡ Skills | 📋 Deliverables |
+| Week |   Focus |   Skills |   Deliverables |
 |------|----------|-----------|------------------|
 | 9 | REST API Development | Custom REST services, HTTP callouts | RESTful service implementations |
 | 10 | Bulk API 2.0 | Large dataset operations | Bulk data processing solutions |
@@ -133,9 +131,9 @@ salesforce-apex-showcase/
 </details>
 
 <details>
-<summary><strong>⚡ Phase 4: Lightning Development (Weeks 15-18)</strong></summary>
+<summary><strong>  Phase 4: Lightning Development (Weeks 15-18)</strong></summary>
 
-| Week | 🎯 Focus | ⚡ Skills | 📋 Deliverables |
+| Week |   Focus |   Skills |  Deliverables |
 |------|----------|-----------|------------------|
 | 15 | LWC Fundamentals | Component lifecycle, data binding | Interactive Lightning components |
 | 16 | Advanced LWC Patterns | Parent-child communication, events | Complex component architectures |
@@ -144,7 +142,7 @@ salesforce-apex-showcase/
 
 </details>
 
-## 🏗️ Featured Solutions
+##   Featured Solutions
 
 ### 🏢 **Salesforce Integration Hub**
 Enterprise-grade multi-system integration platform
@@ -181,18 +179,18 @@ Advanced analytics and business intelligence
 * **Visualization:** Einstein Analytics, custom dashboards
 * **Automation:** Scheduled reports, alert notifications
 
-## 🔗 API Integration Mastery
+## 🔗 API Integration 
 
 <table>
 <tr>
 <td align="center" width="33%">
 <img src="https://img.icons8.com/color/64/000000/api.png"/><br/>
-<strong>🌐 REST APIs</strong><br/>
+<strong>  REST APIs</strong><br/>
 Custom services, HTTP callouts, authentication patterns
 </td>
 <td align="center" width="33%">
 <img src="https://img.icons8.com/color/64/000000/database.png"/><br/>
-<strong>📦 Bulk API 2.0</strong><br/>
+<strong>  Bulk API 2.0</strong><br/>
 Large dataset processing, job management, parallel processing
 </td>
 <td align="center" width="33%">
@@ -204,31 +202,31 @@ Real-time events, PushTopics, CometD integration
 <tr>
 <td align="center" width="33%">
 <img src="https://img.icons8.com/color/64/000000/search.png"/><br/>
-<strong>🎯 GraphQL</strong><br/>
+<strong>  GraphQL</strong><br/>
 Precise data queries, schema introspection, efficient fetching
 </td>
 <td align="center" width="33%">
 <img src="https://img.icons8.com/color/64/000000/stack.png"/><br/>
-<strong>🔄 Composite API</strong><br/>
+<strong>  Composite API</strong><br/>
 Bundled requests, transaction control, performance optimization
 </td>
 <td align="center" width="33%">
 <img src="https://img.icons8.com/color/64/000000/gear.png"/><br/>
-<strong>⚙️ Metadata API</strong><br/>
+<strong>  Metadata API</strong><br/>
 Programmatic customization, deployment automation
 </td>
 </tr>
 </table>
 
-## 💡 Quick Start
+##   Quick Start
 
 ### Prerequisites Checklist
-- [ ] 🏢 Salesforce Developer Org (free signup)
-- [ ] 🛠️ Salesforce CLI (SFDX) installed
-- [ ] 💻 VS Code with Salesforce Extension Pack
-- [ ] ☕ Basic understanding of object-oriented programming
+- [ ]  Salesforce Developer Org (free signup)
+- [ ]  Salesforce CLI (SFDX) installed
+- [ ]  VS Code with Salesforce Extension Pack
+- [ ]  Basic understanding of object-oriented programming
 
-### 🚀 Get Started in 3 Steps
+###   Get Started in 3 Steps
 
 ```bash
 # 1. Clone this repository
@@ -242,40 +240,11 @@ sfdx auth:web:login -d -a myDevOrg
 sfdx force:source:deploy -p apex-development/fundamentals/
 ```
 
-### 🎯 Choose Your Learning Path
 
-<table>
-<tr>
-<td align="center">
-<img src="https://img.icons8.com/color/48/000000/student-male.png"/><br/>
-<strong>📚 Beginner Path</strong><br/>
-<em>New to Salesforce?</em><br/>
-Start with Apex fundamentals
-<br/><br/>
-<a href="apex-development/fundamentals/">Begin Learning →</a>
-</td>
-<td align="center">
-<img src="https://img.icons8.com/color/48/000000/developer.png"/><br/>
-<strong>🔧 Developer Path</strong><br/>
-<em>Have Apex experience?</em><br/>
-Jump to integration patterns
-<br/><br/>
-<a href="api-integrations/">View Integrations →</a>
-</td>
-<td align="center">
-<img src="https://img.icons8.com/color/48/000000/architect.png"/><br/>
-<strong>🏗️ Architect Path</strong><br/>
-<em>Building enterprise solutions?</em><br/>
-Explore advanced patterns
-<br/><br/>
-<a href="enterprise-solutions/">See Solutions →</a>
-</td>
-</tr>
-</table>
 
 ## 📈 Skills Progression Tracker
 
-### 🌱 **Beginner Level** (Projects 1-6)
+###   **Beginner Level** (Projects 1-6)
 **Progress:** ⬜⬜⬜⬜⬜⬜ (0/6 completed)
 - [ ] Master Apex data types and collections (Lists, Sets, Maps)
 - [ ] Write efficient SOQL and SOSL queries
@@ -284,7 +253,7 @@ Explore advanced patterns
 - [ ] Understand governor limits and best practices
 - [ ] Build simple Apex classes and methods
 
-### 🔥 **Intermediate Level** (Projects 7-15)
+###   **Intermediate Level** (Projects 7-15)
 **Progress:** ⬜⬜⬜⬜⬜⬜⬜⬜⬜ (0/9 completed)
 - [ ] Build robust trigger frameworks with handler patterns
 - [ ] Implement asynchronous processing (@future, Queueable, Batch)
@@ -296,7 +265,7 @@ Explore advanced patterns
 - [ ] Optimize performance for large data volumes
 - [ ] Create reusable utility classes and design patterns
 
-### ⚡ **Advanced Level** (Projects 16-25)
+###   **Advanced Level** (Projects 16-25)
 **Progress:** ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ (0/10 completed)
 - [ ] Architect enterprise integration solutions with multiple systems
 - [ ] Master Bulk API 2.0 for processing millions of records
@@ -309,74 +278,27 @@ Explore advanced patterns
 - [ ] Create performance monitoring and optimization frameworks
 - [ ] Lead enterprise-grade Salesforce implementations
 
-## 🧪 Testing Excellence
 
-Our testing framework demonstrates industry best practices:
 
-### 🎯 **Testing Strategies**
-- **Unit Testing:** Comprehensive test classes for all Apex components
-- **Integration Testing:** End-to-end API integration testing
-- **Mock Testing:** HttpCalloutMock and test doubles for external services
-- **Data Factories:** Reusable test data creation patterns
-- **Performance Testing:** Load testing for bulk operations
 
-### 📊 **Quality Metrics**
-- **Code Coverage:** 95%+ across all components
-- **Test Execution:** Automated testing in CI/CD pipelines
-- **Performance Benchmarks:** Response time and throughput measurements
-- **Security Testing:** Validation of sharing rules and field-level security
+##   Development Tools & Resources
 
-## 🏆 Certifications & Achievements
+###   **Development Environment**
+-   [Salesforce Developer Org](https://developer.salesforce.com/signup) - Free development environment
+-   [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli) - Command line interface
+-   [VS Code Extensions](https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode) - IDE support
+-   [Salesforce Inspector](https://chrome.google.com/webstore/detail/salesforce-inspector/aodjmnfhjibkcdimpodiifdjnnncaafh) - Browser extension
 
-<div align="center">
+###   **Automation & CI/CD**
+-  [GitHub Actions Workflows](.github/workflows/) - Automated deployment
+-   [Apex Test Automation](utilities/deployment-scripts/) - Continuous testing
+-   [Package Development](utilities/packaging/) - Managed package creation
+-   [Code Quality Gates](utilities/quality-checks/) - Static code analysis
 
-[![Platform Developer I](https://img.shields.io/badge/Salesforce-Platform%20Developer%20I-00A1E0?style=for-the-badge&logo=salesforce&logoColor=white)](#)
-[![Platform Developer II](https://img.shields.io/badge/Salesforce-Platform%20Developer%20II-FF6B00?style=for-the-badge&logo=salesforce&logoColor=white)](#)
-[![Integration Architecture](https://img.shields.io/badge/Salesforce-Integration%20Architecture-1798C1?style=for-the-badge&logo=salesforce&logoColor=white)](#)
-
-**🎖️ Professional Achievements:**
-- ✅ Built 25+ production Apex applications serving 10K+ users
-- ✅ Reduced API response times by 75% through optimization techniques
-- ✅ Implemented enterprise integrations processing 1M+ records daily
-- ✅ Achieved 98%+ code coverage across all production deployments
-- ✅ Led Salesforce architecture for Fortune 500 companies
-
-</div>
-
-## 🛠️ Development Tools & Resources
-
-### 📦 **Development Environment**
-- 🏢 [Salesforce Developer Org](https://developer.salesforce.com/signup) - Free development environment
-- 🛠️ [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli) - Command line interface
-- 💻 [VS Code Extensions](https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode) - IDE support
-- 📊 [Salesforce Inspector](https://chrome.google.com/webstore/detail/salesforce-inspector/aodjmnfhjibkcdimpodiifdjnnncaafh) - Browser extension
-
-### 🔧 **Automation & CI/CD**
-- 🚀 [GitHub Actions Workflows](.github/workflows/) - Automated deployment
-- 🧪 [Apex Test Automation](utilities/deployment-scripts/) - Continuous testing
-- 📦 [Package Development](utilities/packaging/) - Managed package creation
-- 📊 [Code Quality Gates](utilities/quality-checks/) - Static code analysis
-
-## 🤝 Contributing
+##   Contributing
 
 We welcome contributions to expand this comprehensive Salesforce ecosystem!
 
-### 🎯 **Ways to Contribute**
-- 🐛 **Report Issues** - Found bugs or improvements in code examples?
-- 💡 **Suggest Features** - Ideas for new integration patterns or components?
-- 📝 **Improve Documentation** - Help make guides clearer and more comprehensive
-- 🏗️ **Add Solutions** - Share your Apex implementations and best practices
-- 🧪 **Enhance Testing** - Contribute test cases and quality improvements
-
-### 📋 **Contribution Guidelines**
-1. 🍴 Fork the repository
-2. 🌿 Create feature branch (`git checkout -b feature/awesome-apex-feature`)
-3. 📝 Follow Salesforce coding standards and best practices
-4. ✅ Include comprehensive test coverage (90%+ required)
-5. 📖 Add detailed documentation for new features
-6. 🧪 Ensure all existing tests pass
-7. 💬 Commit with clear messages (`git commit -m 'Add lightning component for data visualization'`)
-8. 📤 Push and create Pull Request
 
 ## 📊 Repository Statistics
 
@@ -414,18 +336,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-### ⚡ **Ready to Master Salesforce Development?**
-
-**Choose your path and start building enterprise-grade solutions today!**
+**⚡ 25 Apex Solutions** • **🔗 15+ API Integrations** • **⚡ 20+ Lightning Components** • **🧪 95%+ Code Coverage**
 
 [![🌱 Start Learning](https://img.shields.io/badge/🌱%20Start%20Learning-Apex%20Fundamentals-success?style=for-the-badge)](apex-development/fundamentals/)
 [![🔗 View Integrations](https://img.shields.io/badge/🔗%20View%20Integrations-API%20Examples-blue?style=for-the-badge)](api-integrations/)
 [![⚡ Lightning Components](https://img.shields.io/badge/⚡%20Lightning%20Components-Modern%20UI-orange?style=for-the-badge)](lightning-development/)
 [![🏢 Enterprise Solutions](https://img.shields.io/badge/🏢%20Enterprise%20Solutions-Production%20Ready-purple?style=for-the-badge)](enterprise-solutions/)
 
-**⭐ Star this repository to track your Salesforce mastery journey! ⭐**
 
-*Created by **Ilyasse Younes** for the Salesforce developer community*
 <p align="center"> <img src="https://img.icons8.com/color/96/000000/salesforce.png" alt="Salesforce"/>
 </div>
 
